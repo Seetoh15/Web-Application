@@ -12,6 +12,7 @@
             <p>................</p>
             <p>test again</P>
             <h1>wiwdniwiw</h1>
+            <input type="email" />
         </div>
         <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
     </form>
