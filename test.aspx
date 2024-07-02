@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="test.aspx.cs" Inherits="WAPP_Assignment.test" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="test.aspx.cs" Inherits="WAPP_Assignment.test" %>
 
 <!DOCTYPE html>
 
@@ -6,15 +6,14 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <p>................</p>
-            <p>test again</P>
-            <h1>wiwdniwiw</h1>
-            <input type="email" />
+<body style="width:100vw;height:100vh;">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;">
+            <div style="width:20%">
+                <h1>hi</h1>
+            </div>
+            <div style="width:80%">
+                <h1>hi</h1>
+            </div>
         </div>
-        <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
-    </form>
 </body>
 </html>
