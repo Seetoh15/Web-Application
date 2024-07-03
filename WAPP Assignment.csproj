@@ -227,7 +227,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Admin\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Educator\" />
+    <Folder Include="Guest\" />
+    <Folder Include="Member\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
