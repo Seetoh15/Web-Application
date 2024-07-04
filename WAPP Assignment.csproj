@@ -127,6 +127,7 @@
     <Content Include="style.css" />
     <Content Include="test.aspx" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="Educator\template.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -186,6 +187,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Educator\template.Master.cs">
+      <DependentUpon>template.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Educator\template.Master.designer.cs">
+      <DependentUpon>template.Master</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -229,7 +237,6 @@
   <ItemGroup>
     <Folder Include="Admin\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Educator\" />
     <Folder Include="Guest\" />
     <Folder Include="Member\" />
   </ItemGroup>

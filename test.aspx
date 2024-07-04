@@ -6,14 +6,30 @@
 <head runat="server">
     <title></title>
 </head>
-<body style="width:100vw;height:100vh;">
-        <div style="width:100%;height:100%;display:flex;flex-direction:column;">
-            <div style="width:20%">
-                <h1>hi</h1>
-            </div>
-            <div style="width:80%">
-                <h1>hi</h1>
-            </div>
-        </div>
+<body>
+        <header id="header">
+<h1>Welcome to Test Website</h1>
+</header>
+<nav id="nav">
+<ul>
+<li><a href="home.aspx">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Article</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+<div id="side">
+<h1>news</h1>
+<a href="#"><p>Develop Assignment Project</p></a>
+<a href="#"><p>Learn CSS</p></a>
+<a href="#">Learn ASP.Net</a>
+</div>
+<p id="con">
+<asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+</asp:ContentPlaceHolder>
+</p>
+<footer id="footer">
+        copyright @WAPP-LAB-AFFENDY
+</footer>
 </body>
 </html>
