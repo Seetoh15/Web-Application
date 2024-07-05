@@ -13,7 +13,7 @@ form {
     height: 100%;
 }
 
-li, a {
+.links {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
