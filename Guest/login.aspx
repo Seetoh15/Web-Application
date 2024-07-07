@@ -17,10 +17,10 @@
             <asp:TextBox ID="pwd" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
         </div>
 
-        <asp:Label ID="errorMsg" runat="server" CssClass="error-message" Text=""></asp:Label>
+        <asp:Label ID="errorMsg" runat="server" CssClass="error-message" Text="Lorem Ipsum" Visible="False"></asp:Label>
         <br />
 
-        <asp:Button ID="Button1" runat="server" Text="Login" CssClass="login-button" />
+        <asp:Button ID="Button1" runat="server" Text="Login" CssClass="login-button" OnClick="Button1_Click" />
         <br />
 
         <div class="signup-link">
