@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Admin\template.css" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -113,6 +114,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Educator\template.css" />
     <Content Include="Educator\test.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -128,8 +130,12 @@
     <Content Include="Guest\login.aspx" />
     <Content Include="Guest\login.css" />
     <Content Include="Guest\template.css" />
+    <Content Include="Member\template.css" />
     <Content Include="template.css" />
     <Content Include="Guest\template.Master" />
+    <Content Include="Admin\template.Master" />
+    <Content Include="Member\template.Master" />
+    <Content Include="Educator\template.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -166,6 +172,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\template.Master.cs">
+      <DependentUpon>template.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\template.Master.designer.cs">
+      <DependentUpon>template.Master</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -189,6 +202,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Educator\template.Master.cs">
+      <DependentUpon>template.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Educator\template.Master.designer.cs">
+      <DependentUpon>template.Master</DependentUpon>
+    </Compile>
     <Compile Include="Educator\test.aspx.cs">
       <DependentUpon>test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -211,6 +231,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Guest\template.Master.designer.cs">
+      <DependentUpon>template.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Member\template.Master.cs">
+      <DependentUpon>template.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\template.Master.designer.cs">
       <DependentUpon>template.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -244,9 +271,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Member\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
