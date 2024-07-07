@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="template.Master.cs" Inherits="WAPP_Assignment.template" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="template.master.cs" Inherits="WAPP_Assignment.Guest.template" %>
 
 <!DOCTYPE html>
 
