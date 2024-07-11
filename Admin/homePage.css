@@ -1,0 +1,86 @@
+﻿/* Custom CSS for the layout */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -16px;
+}
+
+.column {
+    flex: 1 1 25%;
+    max-width: 25%;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .column {
+        flex: 1 1 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .column {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.border-left-success {
+    border-left: 4px solid #28a745;
+}
+
+.border-left-info {
+    border-left: 4px solid #17a2b8;
+}
+
+.border-left-warning {
+    border-left: 4px solid #ffc107;
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.text-xs {
+    font-size: 12px;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.text-success {
+    color: #28a745;
+}
+
+.text-info {
+    color: #17a2b8;
+}
+
+.text-warning {
+    color: #ffc107;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-gray-800 {
+    color: #343a40;
+}
+
+.text-gray-300 {
+    color: #d1d3e2;
+}
