@@ -19,8 +19,8 @@
             </div>
             <nav>
                 <ul class="nav_links">
-                    <li><a href="#" class="links">Page 1</a></li>
-                    <li><a href="#" class="links">Page 2</a></li>
+                    <li><a href="#" class="links">Admin</a></li>
+                    <li><a href="#" class="links">Educator</a></li>
                     <li><a href="#" class="links">Page 3</a></li>
                 </ul>
             </nav>
