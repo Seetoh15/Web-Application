@@ -25,7 +25,7 @@
 
         <div class="signup-link">
             <asp:Label ID="Label4" runat="server" Text="Do not have an account?"></asp:Label>
-            <asp:LinkButton ID="LinkButton2" runat="server" CssClass="signup-button">Sign Up</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton2" runat="server" CssClass="signup-button" OnClick="LinkButton2_Click">Sign Up</asp:LinkButton>
         </div>
     </div>
 </asp:Content>
