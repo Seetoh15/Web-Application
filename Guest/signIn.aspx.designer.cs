@@ -15,24 +15,6 @@ namespace WAPP_Assignment.Guest
     {
 
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
-        /// fname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fname;
-
-        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -42,13 +24,13 @@ namespace WAPP_Assignment.Guest
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// lname control.
+        /// name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lname;
+        protected global::System.Web.UI.WebControls.TextBox name;
 
         /// <summary>
         /// Label3 control.
@@ -132,13 +114,13 @@ namespace WAPP_Assignment.Guest
         protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
-        /// usertype control.
+        /// user_type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList usertype;
+        protected global::System.Web.UI.WebControls.DropDownList user_type;
 
         /// <summary>
         /// Label8 control.
@@ -150,13 +132,13 @@ namespace WAPP_Assignment.Guest
         protected global::System.Web.UI.WebControls.Label Label8;
 
         /// <summary>
-        /// pwd control.
+        /// password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pwd;
+        protected global::System.Web.UI.WebControls.TextBox password;
 
         /// <summary>
         /// ErrorMsg control.

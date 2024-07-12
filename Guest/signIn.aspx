@@ -14,13 +14,8 @@
         <h2 class="login-title">Sign Up</h2>
 
         <div class="form-group">
-            <asp:Label ID="Label1" runat="server" Text="First Name:"></asp:Label>
-            <asp:TextBox ID="fname" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-
-        <div class="form-group">
-            <asp:Label ID="Label2" runat="server" Text="Last Name:"></asp:Label>
-            <asp:TextBox ID="lname" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:Label ID="Label2" runat="server" Text="Name:"></asp:Label>
+            <asp:TextBox ID="name" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
 
         <div class="form-group">
@@ -48,7 +43,7 @@
 
         <div class="form-group">
             <asp:Label ID="Label7" runat="server" Text="Select your role:"></asp:Label>
-            <asp:DropDownList ID="usertype" runat="server" CssClass="auto-style1" Width="368px">
+            <asp:DropDownList ID="user_type" runat="server" CssClass="auto-style1" Width="368px">
                 <asp:ListItem Value="Educator">Educator</asp:ListItem>
                 <asp:ListItem Value="Member">Member</asp:ListItem>
                 <asp:ListItem Value="Admin">Admin</asp:ListItem>
@@ -57,7 +52,7 @@
 
         <div class="form-group">
             <asp:Label ID="Label8" runat="server" Text="Password:"></asp:Label>
-            <asp:TextBox ID="pwd" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+            <asp:TextBox ID="password" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
         </div>
 
         <asp:Label ID="ErrorMsg" runat="server" CssClass="error-message"></asp:Label>

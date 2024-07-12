@@ -25,7 +25,7 @@ namespace WAPP_Assignment.Guest
                     con.Open();
 
                     
-                    string query = "SELECT COUNT(*) FROM userTable WHERE username = @username";
+                    string query = "SELECT COUNT(*) FROM end_user WHERE username = @username";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@username", username.Text);
                     int count = Convert.ToInt32(cmd.ExecuteScalar());
@@ -39,18 +39,17 @@ namespace WAPP_Assignment.Guest
                     else
                     {
                        
-                        string query1 = "INSERT INTO userTable (fname, lname, gender, country, email, username, password, usertype) " +
-                                        "VALUES (@firstname, @lastname, @gender, @country, @email, @username, @password, @usertype)";
+                        string query1 = "INSERT INTO end_user (name, gender, country, email, username, password, user_type) " +
+                                        "VALUES (@name, @gender, @country, @email, @username, @password, @user_type)";
 
                         SqlCommand cmd1 = new SqlCommand(query1, con);
-                        cmd1.Parameters.AddWithValue("@firstname", fname.Text);
-                        cmd1.Parameters.AddWithValue("@lastname", lname.Text);
+                        cmd1.Parameters.AddWithValue("@name", name.Text);
                         cmd1.Parameters.AddWithValue("@gender", gender.SelectedValue);
                         cmd1.Parameters.AddWithValue("@country", country.Text);
                         cmd1.Parameters.AddWithValue("@email", email.Text);
                         cmd1.Parameters.AddWithValue("@username", username.Text);
-                        cmd1.Parameters.AddWithValue("@password", pwd.Text);
-                        cmd1.Parameters.AddWithValue("@usertype", usertype.SelectedValue); 
+                        cmd1.Parameters.AddWithValue("@password", password.Text);
+                        cmd1.Parameters.AddWithValue("@user_type", user_type.SelectedValue); 
 
                         cmd1.ExecuteNonQuery();
                         Response.Redirect("login.aspx");

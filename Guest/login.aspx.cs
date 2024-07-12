@@ -22,13 +22,13 @@ namespace WAPP_Assignment.Guest
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("Select count(*) from userTable where username = '" +
+                SqlCommand cmd = new SqlCommand("Select count(*) from end_user where username = '" +
                     username.Text + "' and Password = '" + pwd.Text + " ' ", con);
                 int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
 
                 if (count > 0)
                 {
-                    SqlCommand cmdType = new SqlCommand("select fname, usertype from userTable where username = '" + username.Text + " ' ", con);
+                    SqlCommand cmdType = new SqlCommand("select name, end_user from userTable where username = '" + username.Text + " ' ", con);
 
                     SqlDataReader dr = cmdType.ExecuteReader();
 
@@ -38,14 +38,17 @@ namespace WAPP_Assignment.Guest
                     while (dr.Read())
                     {
                         type = dr["usertype"].ToString().Trim();
-                        name = dr["fname"].ToString().Trim();
+                        name = dr["name"].ToString().Trim();
                     }
-                    Session["userName"] = username.Text;
+                    Session["username"] = username.Text;
 
                     if (type == "admin")
-                        Response.Redirect("adminDashboard.aspx");
+                        Response.Redirect("homePage.aspx");
                     else if (type == "member")
-                        Response.Redirect("memberDashboard");
+                        Response.Redirect("member.aspx");
+                    else if (type == "educator")
+                        Response.Redirect("educator.aspx");
+
                 }
                 else
                 {
