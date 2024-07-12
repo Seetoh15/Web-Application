@@ -15,24 +15,6 @@ namespace WAPP_Assignment.Guest
     {
 
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
-        /// fname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fname;
-
-        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -42,13 +24,13 @@ namespace WAPP_Assignment.Guest
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// lname control.
+        /// name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lname;
+        protected global::System.Web.UI.WebControls.TextBox name;
 
         /// <summary>
         /// Label3 control.
@@ -60,31 +42,13 @@ namespace WAPP_Assignment.Guest
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// gender control.
+        /// username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList gender;
-
-        /// <summary>
-        /// Label5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
-
-        /// <summary>
-        /// country control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox country;
+        protected global::System.Web.UI.WebControls.TextBox username;
 
         /// <summary>
         /// Label4 control.
@@ -105,6 +69,24 @@ namespace WAPP_Assignment.Guest
         protected global::System.Web.UI.WebControls.TextBox email;
 
         /// <summary>
+        /// Label5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label5;
+
+        /// <summary>
+        /// country control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox country;
+
+        /// <summary>
         /// Label6 control.
         /// </summary>
         /// <remarks>
@@ -114,13 +96,13 @@ namespace WAPP_Assignment.Guest
         protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// username control.
+        /// gender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox username;
+        protected global::System.Web.UI.WebControls.DropDownList gender;
 
         /// <summary>
         /// Label7 control.
@@ -132,13 +114,31 @@ namespace WAPP_Assignment.Guest
         protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
-        /// pwd control.
+        /// user_type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pwd;
+        protected global::System.Web.UI.WebControls.DropDownList user_type;
+
+        /// <summary>
+        /// Label8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label8;
+
+        /// <summary>
+        /// password control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox password;
 
         /// <summary>
         /// ErrorMsg control.
@@ -150,15 +150,6 @@ namespace WAPP_Assignment.Guest
         protected global::System.Web.UI.WebControls.Label ErrorMsg;
 
         /// <summary>
-        /// usertype control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label usertype;
-
-        /// <summary>
         /// signup control.
         /// </summary>
         /// <remarks>
@@ -168,13 +159,13 @@ namespace WAPP_Assignment.Guest
         protected global::System.Web.UI.WebControls.Button signup;
 
         /// <summary>
-        /// Label9 control.
+        /// Label10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label9;
+        protected global::System.Web.UI.WebControls.Label Label10;
 
         /// <summary>
         /// LinkButton2 control.
