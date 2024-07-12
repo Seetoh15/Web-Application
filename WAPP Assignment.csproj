@@ -136,6 +136,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Guest\login.aspx" />
     <Content Include="Guest\login.css" />
+    <Content Include="Guest\signIn.aspx" />
+    <Content Include="Guest\signIn.css" />
     <Content Include="Guest\template.css" />
     <Content Include="Member\template.css" />
     <Content Include="template.css" />
@@ -246,6 +248,13 @@
     </Compile>
     <Compile Include="Guest\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\signIn.aspx.cs">
+      <DependentUpon>signIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\signIn.aspx.designer.cs">
+      <DependentUpon>signIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Guest\template.Master.cs">
       <DependentUpon>template.Master</DependentUpon>
