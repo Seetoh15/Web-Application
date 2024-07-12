@@ -1,27 +1,29 @@
-﻿.login-container {
+﻿/* Overall Container */
+.login-container {
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center; /* Center items horizontally */
     width: 350px;
     padding: 40px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 0 auto; 
+    margin: 0 auto; /* Center the container horizontally on the page */
 }
 
+/* Heading */
 .login-title {
     font-size: 28px;
     margin-bottom: 30px;
     color: #333;
-    text-align: center; 
+    text-align: center; /* Center the heading text */
 }
 
-
+/* Form Groups (Labels and Inputs) */
 .form-group {
     width: 100%;
     margin-bottom: 20px;
-    text-align: center; 
+    text-align: center; /* Center label and input */
 }
 
     .form-group label {
@@ -38,7 +40,7 @@
     box-sizing: border-box;
 }
 
-
+/* Login Button */
 .login-button {
     background-color: #007bff;
     color: white;
@@ -55,17 +57,17 @@
         background-color: #0056b3;
     }
 
-
+/* Error Message */
 .error-message {
     color: red;
     margin-bottom: 10px;
     text-align: center;
 }
 
-
+/* Signup Link */
 .signup-link {
     margin-top: 20px;
-    text-align: center; 
+    text-align: center; /* Center the signup link */
 }
 
 .signup-button {
