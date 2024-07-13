@@ -121,6 +121,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="dbConnection.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Educator\forum.aspx" />
+    <Content Include="Educator\forum.css" />
     <Content Include="Educator\template.css" />
     <Content Include="Educator\test.aspx" />
     <Content Include="favicon.ico" />
@@ -224,6 +226,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Educator\forum.aspx.cs">
+      <DependentUpon>forum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Educator\forum.aspx.designer.cs">
+      <DependentUpon>forum.aspx</DependentUpon>
     </Compile>
     <Compile Include="Educator\template.Master.cs">
       <DependentUpon>template.Master</DependentUpon>

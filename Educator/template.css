@@ -32,7 +32,7 @@ header {
 #content {
     height: 90%;
     overflow: auto; /* Adds scroll bar when content overflows */
-    padding: 20px; /* Optional: Add padding for better aesthetics */
+    /*padding: 20px;*/ /* Optional: Add padding for better aesthetics */
     box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
 }
 
