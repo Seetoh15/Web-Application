@@ -108,6 +108,7 @@
     <Content Include="About.aspx" />
     <Content Include="Admin\homePage.aspx" />
     <Content Include="Admin\homePage.css" />
+    <Content Include="Admin\homePage.js" />
     <Content Include="Admin\template.css" />
     <Content Include="App_Data\Database.mdf" />
     <Content Include="App_Data\Database_log.ldf">
