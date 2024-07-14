@@ -136,6 +136,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Guest\editProfile.aspx" />
+    <Content Include="Guest\editProfile.css" />
     <Content Include="Guest\login.aspx" />
     <Content Include="Guest\login.css" />
     <Content Include="Guest\signIn.aspx" />
@@ -250,6 +252,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\editProfile.aspx.cs">
+      <DependentUpon>editProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\editProfile.aspx.designer.cs">
+      <DependentUpon>editProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Guest\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
