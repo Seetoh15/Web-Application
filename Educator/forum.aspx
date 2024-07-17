@@ -8,7 +8,9 @@
     <div style="width:100%; height:100%; display:flex; flex-direction:column; align-items:center; gap:20px; padding-top:20px;">
         <div class="search">
             <span class="search-icon material-symbols-outlined">search</span>
-            <input class="search-input" type="search" placeholder="Search" />
+            <%--<input class="search-input" type="search" placeholder="Search" />--%>
+            <%--<input id="search-input" class="search-input" type="text" placeholder="Search" />--%>
+            <asp:TextBox ID="TextBox1" runat="server" CssClass="search-input" placeholder="Search"></asp:TextBox>
         </div>
         <div style="width:70%; height:100%; display:flex; flex-direction:column;">
             <a href="#">
