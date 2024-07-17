@@ -122,6 +122,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="dbConnection.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Educator\course.aspx" />
     <Content Include="Educator\forum.aspx" />
     <Content Include="Educator\forum.css" />
     <Content Include="Educator\template.css" />
@@ -235,6 +236,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Educator\course.aspx.cs">
+      <DependentUpon>course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Educator\course.aspx.designer.cs">
+      <DependentUpon>course.aspx</DependentUpon>
     </Compile>
     <Compile Include="Educator\forum.aspx.cs">
       <DependentUpon>forum.aspx</DependentUpon>
