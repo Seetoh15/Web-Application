@@ -24,7 +24,6 @@ namespace WAPP_Assignment.Guest
                 {
                     con.Open();
 
-
                     string query = "SELECT COUNT(*) FROM end_user WHERE username = @username";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@username", username.Text);
@@ -38,9 +37,12 @@ namespace WAPP_Assignment.Guest
                     }
                     else
                     {
+                        
+                        string status = user_type.SelectedValue == "Member" ? "Accepted" : "Pending";
 
-                        string query1 = "INSERT INTO end_user (name, gender, country, email, username, password, user_type) " +
-                                        "VALUES (@name, @gender, @country, @email, @username, @password, @user_type)";
+                       
+                        string query1 = "INSERT INTO end_user (name, gender, country, email, username, password, user_type, status) " +
+                                        "VALUES (@name, @gender, @country, @email, @username, @password, @user_type, @status)";
 
                         SqlCommand cmd1 = new SqlCommand(query1, con);
                         cmd1.Parameters.AddWithValue("@name", name.Text);
@@ -50,9 +52,17 @@ namespace WAPP_Assignment.Guest
                         cmd1.Parameters.AddWithValue("@username", username.Text);
                         cmd1.Parameters.AddWithValue("@password", password.Text);
                         cmd1.Parameters.AddWithValue("@user_type", user_type.SelectedValue);
+                        cmd1.Parameters.AddWithValue("@status", status);
 
                         cmd1.ExecuteNonQuery();
-                        Response.Redirect("login.aspx");
+
+                       
+                        ErrorMsg.Visible = false;
+                        SuccessMsg.Visible = true;
+                        SuccessMsg.ForeColor = System.Drawing.Color.Green;
+                        SuccessMsg.Text = "Sign up successful!";
+
+                        
                     }
                     con.Close();
                 }
@@ -61,10 +71,10 @@ namespace WAPP_Assignment.Guest
             {
                 ErrorMsg.Visible = true;
                 ErrorMsg.ForeColor = System.Drawing.Color.Red;
-                ErrorMsg.Text = "Registration not succesful!" + ex.ToString();
+                ErrorMsg.Text = "Registration not successful!" + ex.ToString(); 
             }
-
         }
+
 
         protected void LinkButton2_Click(object sender, EventArgs e)
         {

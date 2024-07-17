@@ -33,6 +33,15 @@ namespace WAPP_Assignment.Guest
         protected global::System.Web.UI.WebControls.TextBox name;
 
         /// <summary>
+        /// rfvName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvName;
+
+        /// <summary>
         /// Label3 control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace WAPP_Assignment.Guest
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox username;
+
+        /// <summary>
+        /// rfvUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUsername;
 
         /// <summary>
         /// Label4 control.
@@ -69,6 +87,24 @@ namespace WAPP_Assignment.Guest
         protected global::System.Web.UI.WebControls.TextBox email;
 
         /// <summary>
+        /// rfvEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
+
+        /// <summary>
+        /// revEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail;
+
+        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>
@@ -85,6 +121,15 @@ namespace WAPP_Assignment.Guest
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox country;
+
+        /// <summary>
+        /// rfvCountry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCountry;
 
         /// <summary>
         /// Label6 control.
@@ -141,6 +186,15 @@ namespace WAPP_Assignment.Guest
         protected global::System.Web.UI.WebControls.TextBox password;
 
         /// <summary>
+        /// rfvPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPassword;
+
+        /// <summary>
         /// ErrorMsg control.
         /// </summary>
         /// <remarks>
@@ -148,6 +202,15 @@ namespace WAPP_Assignment.Guest
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label ErrorMsg;
+
+        /// <summary>
+        /// SuccessMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SuccessMsg;
 
         /// <summary>
         /// signup control.
