@@ -137,13 +137,19 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Guest\calender.jpg" />
+    <Content Include="Guest\costsaving.jpg" />
     <Content Include="Guest\editProfile.aspx" />
     <Content Include="Guest\editProfile.css" />
+    <Content Include="Guest\elearning.jpg" />
     <Content Include="Guest\login.aspx" />
     <Content Include="Guest\login.css" />
+    <Content Include="Guest\quiz.jpg" />
     <Content Include="Guest\signIn.aspx" />
     <Content Include="Guest\signIn.css" />
+    <Content Include="Guest\guesthome.css" />
     <Content Include="Guest\template.css" />
+    <Content Include="Guest\guesthome.aspx" />
     <Content Include="Member\template.css" />
     <Content Include="template.css" />
     <Content Include="Guest\template.Master" />
@@ -281,6 +287,13 @@
     </Compile>
     <Compile Include="Guest\template.Master.designer.cs">
       <DependentUpon>template.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\guesthome.aspx.cs">
+      <DependentUpon>guesthome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\guesthome.aspx.designer.cs">
+      <DependentUpon>guesthome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Member\template.Master.cs">
       <DependentUpon>template.Master</DependentUpon>
