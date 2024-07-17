@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Guest/template.Master" AutoEventWireup="true" CodeBehind="editProfile.aspx.cs" Inherits="WAPP_Assignment.Guest.editProfile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/template.Master" AutoEventWireup="true" CodeBehind="editProfile.aspx.cs" Inherits="WAPP_Assignment.Guest.editProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="editProfile.css" rel="stylesheet" />
 </asp:Content>
