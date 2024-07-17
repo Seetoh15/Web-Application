@@ -106,6 +106,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Admin\admin.aspx" />
+    <Content Include="Admin\admin.css" />
     <Content Include="Admin\homePage.aspx" />
     <Content Include="Admin\homePage.css" />
     <Content Include="Admin\homePage.js" />
@@ -193,6 +195,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\homePage.aspx.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
