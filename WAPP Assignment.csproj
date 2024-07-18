@@ -108,6 +108,8 @@
     <Content Include="About.aspx" />
     <Content Include="Admin\admin.aspx" />
     <Content Include="Admin\admin.css" />
+    <Content Include="Admin\editProfileAdmin.aspx" />
+    <Content Include="Admin\editProfileAdmin.css" />
     <Content Include="Admin\homePage.aspx" />
     <Content Include="Admin\homePage.css" />
     <Content Include="Admin\homePage.js" />
@@ -201,6 +203,13 @@
     </Compile>
     <Compile Include="Admin\admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\editProfileAdmin.aspx.cs">
+      <DependentUpon>editProfileAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\editProfileAdmin.aspx.designer.cs">
+      <DependentUpon>editProfileAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\homePage.aspx.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
