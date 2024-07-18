@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="template.Master" AutoEventWireup="true" CodeBehind="admin.aspx.cs" Inherits="WAPP_Assignment.Admin.admin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/template.Master" AutoEventWireup="true" CodeBehind="admin.aspx.cs" Inherits="WAPP_Assignment.Admin.admin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
