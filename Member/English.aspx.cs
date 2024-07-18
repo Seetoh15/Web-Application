@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WAPP_Assignment.Member
 {
-    public partial class template : System.Web.UI.MasterPage
+    public partial class WebForm1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
