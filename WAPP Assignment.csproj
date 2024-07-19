@@ -147,8 +147,10 @@
     <Content Include="Guest\editProfile.aspx" />
     <Content Include="Guest\editProfile.css" />
     <Content Include="Guest\elearning.jpg" />
+    <Content Include="Guest\english.jpeg" />
     <Content Include="Guest\login.aspx" />
     <Content Include="Guest\login.css" />
+    <Content Include="Guest\maths.png" />
     <Content Include="Guest\quiz.jpg" />
     <Content Include="Guest\signIn.aspx" />
     <Content Include="Guest\signIn.css" />
