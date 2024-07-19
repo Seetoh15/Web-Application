@@ -13,5 +13,17 @@ namespace WAPP_Assignment.Admin
         {
 
         }
+
+        protected void ButtonSaveProfile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            // Logic for the "Return to Home" link button click event
+            Response.Redirect("/Admin/homePage.aspx"); // Adjust the URL as needed
+        }
+
     }
 }

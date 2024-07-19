@@ -1,8 +1,11 @@
-﻿/* Custom CSS for the layout */
+﻿@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+/* Custom CSS for the layout */
 .container {
     display: flex;
     flex-wrap: wrap;
     margin: 15px 0 35px 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .column {
@@ -28,7 +31,7 @@
 }
 
 .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
     height: 100%;
     padding: 18px;
     display: flex;
