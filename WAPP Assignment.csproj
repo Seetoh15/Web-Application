@@ -144,7 +144,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Guest\aboutUs.aspx" />
+    <Content Include="Guest\aboutUs.css" />
     <Content Include="Guest\calender.jpg" />
+    <Content Include="Guest\contactUs.aspx" />
+    <Content Include="Guest\contactUs.css" />
     <Content Include="Guest\costsaving.jpg" />
     <Content Include="Guest\editProfile.aspx" />
     <Content Include="Guest\editProfile.css" />
@@ -152,15 +156,19 @@
     <Content Include="Guest\english.jpeg" />
     <Content Include="Guest\faq.aspx" />
     <Content Include="Guest\faq.js" />
+    <Content Include="Guest\jet.jpg" />
+    <Content Include="Guest\joshua.jpg" />
     <Content Include="Guest\login.aspx" />
     <Content Include="Guest\login.css" />
     <Content Include="Guest\maths.png" />
     <Content Include="Guest\quiz.jpg" />
+    <Content Include="Guest\seetoh.PNG" />
     <Content Include="Guest\signIn.aspx" />
     <Content Include="Guest\signIn.css" />
     <Content Include="Guest\guesthome.css" />
     <Content Include="Guest\template.css" />
     <Content Include="Guest\guesthome.aspx" />
+    <Content Include="Guest\yip.png" />
     <Content Include="Member\template.css" />
     <Content Include="template.css" />
     <Content Include="Guest\template.Master" />
@@ -305,6 +313,20 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\aboutUs.aspx.cs">
+      <DependentUpon>aboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\aboutUs.aspx.designer.cs">
+      <DependentUpon>aboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\contactUs.aspx.cs">
+      <DependentUpon>contactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\contactUs.aspx.designer.cs">
+      <DependentUpon>contactUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Guest\editProfile.aspx.cs">
       <DependentUpon>editProfile.aspx</DependentUpon>

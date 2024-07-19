@@ -20,8 +20,9 @@
             <nav>
                 <ul class="nav_links">
                     <li><a href="guesthome.aspx" class="links">Home</a></li>
-                    <li><a href="#" class="links">About us</a></li>
-                    <li><a href="#" class="links">Page 3</a></li>
+                    <li><a href="aboutUS.aspx" class="links">About us</a></li>
+                    <li><a href="contactUS.aspx" class="links">Contact us</a></li>
+                    <li><a href="faq.aspx" class="links">FAQ's</a></li>
                 </ul>
             </nav>
             <div id="pic_container">
