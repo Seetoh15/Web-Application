@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <link href="editProfileAdmin.css" rel="stylesheet" />
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="profile-container">
         <h2 class="profile-title">Edit Profile</h2>
@@ -38,8 +39,6 @@
             <asp:Label ID="Label7" runat="server" Text="Select your role:"></asp:Label>
             <asp:DropDownList ID="user_type" runat="server" CssClass="form-control" AutoPostBack="True">
                 <asp:ListItem Value="Educator">Educator</asp:ListItem>
-                <asp:ListItem Value="Member">Member</asp:ListItem>
-                <asp:ListItem Value="Admin">Admin</asp:ListItem>
             </asp:DropDownList>
         </div>
 
@@ -57,8 +56,8 @@
         <asp:Image ID="profile_pic" runat="server" Height="240px" Width="289px" />
 
         <asp:Label ID="ErrorMsg" runat="server" CssClass="error-message"></asp:Label>
-        <br />
 
+        <br />
         <asp:Button ID="save" runat="server" Text="Save Profile" CssClass="save-button" OnClick="ButtonSaveProfile_Click" />
         <br />
 

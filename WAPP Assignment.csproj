@@ -106,13 +106,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Admin\admin.aspx" />
-    <Content Include="Admin\admin.css" />
+    <Content Include="Admin\adminDetails.aspx" />
+    <Content Include="Admin\allUserDetails.css" />
     <Content Include="Admin\editProfileAdmin.aspx" />
     <Content Include="Admin\editProfileAdmin.css" />
     <Content Include="Admin\homePage.aspx" />
     <Content Include="Admin\homePage.css" />
     <Content Include="Admin\homePage.js" />
+    <Content Include="Admin\memberDetails.aspx" />
     <Content Include="Admin\template.css" />
     <Content Include="App_Data\Database.mdf" />
     <Content Include="App_Data\Database_log.ldf">
@@ -197,12 +198,12 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\admin.aspx.cs">
-      <DependentUpon>admin.aspx</DependentUpon>
+    <Compile Include="Admin\adminDetails.aspx.cs">
+      <DependentUpon>adminDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\admin.aspx.designer.cs">
-      <DependentUpon>admin.aspx</DependentUpon>
+    <Compile Include="Admin\adminDetails.aspx.designer.cs">
+      <DependentUpon>adminDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\editProfileAdmin.aspx.cs">
       <DependentUpon>editProfileAdmin.aspx</DependentUpon>
@@ -217,6 +218,13 @@
     </Compile>
     <Compile Include="Admin\homePage.aspx.designer.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\memberDetails.aspx.cs">
+      <DependentUpon>memberDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\memberDetails.aspx.designer.cs">
+      <DependentUpon>memberDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\template.Master.cs">
       <DependentUpon>template.Master</DependentUpon>

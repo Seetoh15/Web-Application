@@ -13,15 +13,18 @@
     <form id="form1" runat="server">
         <header>
             <div id="logo_container">
-                <a href="#" style="width:70px; height:70px;">
+                <a href="homePage.aspx" style="width:70px; height:70px;">
                     <img class="logo" src="../image/logo.png" alt="logo" />
                 </a>
             </div>
             <nav>
                 <ul class="nav_links">
-                    <li><a href="#" class="links">Admin</a></li>
-                    <li><a href="#" class="links">Educator</a></li>
+                    <li><a href="adminDetails.aspx" class="links">Admin</a></li>
+                    <li><a href="educatorDetails.aspx" class="links">Educator</a></li>
+                    <li><a href="memberDetails.aspx" class="links">Member</a></li>
                     <li><a href="#" class="links">Forums</a></li>
+                    <li><a href="#" class="links">Courses</a></li>
+                    
                 </ul>
             </nav>
             <div id="pic_container">
