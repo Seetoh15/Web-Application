@@ -1,17 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/template.Master" AutoEventWireup="true" CodeBehind="adminDetails.aspx.cs" Inherits="WAPP_Assignment.Admin.admin" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/template.Master" AutoEventWireup="true" CodeBehind="educatorDetails.aspx.cs" Inherits="WAPP_Assignment.Admin.educatorDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Details</title>
+    <title>Educators Details</title>
     <link rel="stylesheet" href="allUserDetails.css" />
-
 </asp:Content>
+    
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    
     <div class="container-header">
-        <h2>Admin Details</h2>
+        <h2>Educator Details</h2>
         <div class="search-container">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
