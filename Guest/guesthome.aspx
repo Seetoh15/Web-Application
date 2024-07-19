@@ -33,6 +33,9 @@
                 <h3>Quiz attempt</h3>
                 <p>Free quiz attempt for revision, improve faster than anyone else.</p>
             </div>
+           <br />
+           <br />
+           <br />
         </section>
          <section class="content">
              <h2>Course Offering</h2>

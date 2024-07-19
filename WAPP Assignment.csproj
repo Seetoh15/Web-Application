@@ -148,6 +148,8 @@
     <Content Include="Guest\editProfile.css" />
     <Content Include="Guest\elearning.jpg" />
     <Content Include="Guest\english.jpeg" />
+    <Content Include="Guest\faq.aspx" />
+    <Content Include="Guest\faq.js" />
     <Content Include="Guest\login.aspx" />
     <Content Include="Guest\login.css" />
     <Content Include="Guest\maths.png" />
@@ -294,6 +296,13 @@
     </Compile>
     <Compile Include="Guest\editProfile.aspx.designer.cs">
       <DependentUpon>editProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\faq.aspx.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\faq.aspx.designer.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
     </Compile>
     <Compile Include="Guest\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
