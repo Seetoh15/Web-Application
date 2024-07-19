@@ -33,8 +33,24 @@
                 <h3>Quiz attempt</h3>
                 <p>Free quiz attempt for revision, improve faster than anyone else.</p>
             </div>
+           <br />
+           <br />
+           <br />
         </section>
-    </div>
+         <section class="content">
+             <h2>Course Offering</h2>
+          <div class="content-box">
+                 <img src="english.jpeg" alt="English Course" />
+                 <h3>English Language</h3>
+                 <p>Enhance your language skills with comprehensive English courses.</p>
+          </div>
+           <div class="content-box">
+                 <img src="maths.png" alt="Math Course" />
+                 <h3>Maths</h3>
+                 <p>Master mathematical concepts and analytical skills with Math courses.</p>
+           </div>
+        </section>
+       </div>
     <br />
     <br />
     <br />
