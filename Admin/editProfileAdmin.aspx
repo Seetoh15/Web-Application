@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/template.Master" AutoEventWireup="true" CodeBehind="editProfileAdmin.aspx.cs" Inherits="WAPP_Assignment.Admin.editProfileAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <link href="editProfileAdmin.css" rel="stylesheet" />
+    <title>Edit User Profile</title>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -48,7 +49,7 @@
         </div>
 
         <div class="form-group">
-             <asp:Label ID="img" runat="server" Text="Profile picture"></asp:Label>
+             <asp:Label ID="img" runat="server" Text="Profile picture："></asp:Label>
                <asp:FileUpload ID="FileUpload1" runat="server" />
              <br />
         </div>

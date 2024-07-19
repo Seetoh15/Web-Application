@@ -1,14 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/template.Master" AutoEventWireup="true" CodeBehind="memberDetails.aspx.cs" Inherits="WAPP_Assignment.Admin.memberDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Details</title>
     <link rel="stylesheet" href="allUserDetails.css" />
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-header">
        <h2>Member Details</h2>
+        <div class="search-container">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
     </div>
     <div class="header_fixed">
         <table>
@@ -25,13 +31,13 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
                     <td><img src="#" /></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><button>View</button></td>
+                    <td></td>
+                    <td><button>Delete</button></td>
                 </tr>
             </tbody>
         </table>
