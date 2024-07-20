@@ -7,17 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WAPP_Assignment.Guest
 {
-    public partial class template : System.Web.UI.MasterPage
+    public partial class aboutUs : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-        protected void LinkButton1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("login.aspx");
-        }
-
     }
 }
