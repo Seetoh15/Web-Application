@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="homePage.css">
+    <link rel="stylesheet" href="allUserDetails.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </asp:Content>
@@ -18,15 +19,15 @@
             <div class="card border-left-success">
                 <div class="card-body">
                     <div>
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                        <div class="text-students">
                             Students
                         </div>
-                        <div class="h5 mb-0 font-weight-bold">
+                        <div class="font-weight">
                             0
                         </div>
                     </div>
                     <div>
-                        <i class="fas fa-dollar-sign fa-2x"></i>
+                        <i class="fas fa-solid fa-user fa-2x"></i>
                     </div>
                 </div>
             </div>
@@ -36,15 +37,15 @@
             <div class="card border-left-info">
                 <div class="card-body">
                     <div>
-                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                        <div class="text-students text-info">
                             Projects
                         </div>
-                        <div class="h5 mb-0 font-weight-bold">
-                            120
+                        <div class="font-weight">
+                            0
                         </div>
                     </div>
                     <div>
-                        <i class="fas fa-clipboard-list fa-2x"></i>
+                        <i class=" fas fa-solid fa-book fa-2x" ></i>
                     </div>
                 </div>
             </div>
@@ -54,15 +55,15 @@
             <div class="card border-left-warning">
                 <div class="card-body">
                     <div>
-                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                        <div class="text-students text-warning">
                             Tasks
                         </div>
-                        <div class="h5 mb-0 font-weight-bold">
-                            24
+                        <div class="font-weight">
+                            0
                         </div>
                     </div>
                     <div>
-                        <i class="fas fa-tasks fa-2x"></i>
+                        <i class="fas fa-solid fa-comment fa-2x"></i>
                     </div>
                 </div>
             </div>
@@ -76,11 +77,26 @@
             <div id="bar-chart"></div>
         </div>
 
-        <div class="charts-card">
-            <p class="chart-title">Testing</p>
-            <div id="area-chart"></div>
-        </div>
+    </div>
 
+    <div class="header_fixed small-table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Profile pic</th>
+                    <th>Name</th>
+                    <th>Name</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="#" /></td>
+                    <td><button>Delete</button></td>
+                    <td><button>Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <!-- FontAwesome script and Charts-->
