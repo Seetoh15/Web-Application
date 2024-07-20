@@ -28,25 +28,25 @@ namespace WAPP_Assignment.Guest
 
                 if (count > 0)
                 {
-                    SqlCommand cmdType = new SqlCommand("select name, end_user from userTable where username = '" + username.Text + " ' ", con);
+                    SqlCommand cmdType = new SqlCommand("select name, user_type from end_user where username = '" + username.Text + " ' ", con);
 
                     SqlDataReader dr = cmdType.ExecuteReader();
 
-                    String type = " ";
+                    String user_type = " ";
                     String name = " ";
 
                     while (dr.Read())
                     {
-                        type = dr["usertype"].ToString().Trim();
+                        user_type = dr["user_type"].ToString().Trim();
                         name = dr["name"].ToString().Trim();
                     }
                     Session["username"] = username.Text;
 
-                    if (type == "admin")
-                        Response.Redirect("homePage.aspx");
-                    else if (type == "member")
+                    if (user_type == "Admin")
+                        Response.Redirect("/Admin/homePage.aspx");
+                    else if (user_type == "Member")
                         Response.Redirect("member.aspx");
-                    else if (type == "educator")
+                    else if (user_type == "Educator")
                         Response.Redirect("educator.aspx");
 
                 }
