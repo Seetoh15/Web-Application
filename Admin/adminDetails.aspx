@@ -33,11 +33,11 @@
             <tbody>
                 <tr>
                     <td><img src="#" /></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>2</td>
+                    <td>22</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
                     <td><button>Delete</button></td>
                 </tr>
             </tbody>
