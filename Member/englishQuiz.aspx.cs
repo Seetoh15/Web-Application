@@ -9,6 +9,9 @@ namespace WAPP_Assignment.Member
 {
     public partial class englishQuiz : System.Web.UI.Page
     {
-      
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

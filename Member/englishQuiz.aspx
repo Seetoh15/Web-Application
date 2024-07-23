@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Member/template.Master" AutoEventWireup="true" CodeBehind="courseSelection.aspx.cs" Inherits="WAPP_Assignment.Member.test" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Member/template.Master" AutoEventWireup="true" CodeBehind="englishQuiz.aspx.cs" Inherits="WAPP_Assignment.Member.englishQuiz" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>English Quiz</title>
-    <link rel="stylesheet" href="englishQuiz.css" />
+    <link rel="stylesheet" href="engQuiz.css" />
     <script src="engQuiz.js" defer></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

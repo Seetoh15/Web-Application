@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Member/template.Master" AutoEventWireup="true" CodeBehind="mathQuiz.aspx.cs" Inherits="WAPP_Assignment.Member.mathQuiz" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Mathematics Quiz</title>
-    <link rel="stylesheet" href="englishQuiz.css" />
-    <script src="engQuiz.js" defer></script>
+    <link rel="stylesheet" href="mathQuiz.css" />
+    <script src="mathQuiz.js" defer></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="centered-form">

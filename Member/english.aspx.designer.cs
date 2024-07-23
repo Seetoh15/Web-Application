@@ -10,7 +10,7 @@
 
 namespace WAPP_Assignment.Member
 {
-    public partial class WebForm1
+    public partial class english
     {
     }
 }

@@ -10,7 +10,7 @@
 
 namespace WAPP_Assignment.Member
 {
-    public partial class maths
+    public partial class math
     {
     }
 }

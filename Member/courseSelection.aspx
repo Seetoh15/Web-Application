@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Member/template.Master" AutoEventWireup="true" CodeBehind="courseSelection.aspx.cs" Inherits="WAPP_Assignment.Member.test" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Member/template.Master" AutoEventWireup="true" CodeBehind="courseSelection.aspx.cs" Inherits="WAPP_Assignment.Member.courseSelection" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Course Selection</title>
     <link rel="stylesheet" href="course.css" />
-    <script src="scripts.js" defer></script>
+    <script src="course.js" defer></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="selection-container">
