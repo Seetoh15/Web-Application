@@ -11,7 +11,12 @@ namespace WAPP_Assignment.Educator
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                dataAccess dataAccess = new dataAccess();
+                GridView1.DataSource = dataAccess.GetData();
+                GridView1.DataBind();
+            }
         }
     }
 }
