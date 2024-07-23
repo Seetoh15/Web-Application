@@ -1,0 +1,72 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.centered-form {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    background-color: #ffffff;
+    text-align: left;
+    overflow: auto;
+    margin-top: 25px;
+}
+
+    .centered-form input[type="text"],
+    .centered-form input[type="password"] {
+        border: none;
+        border-bottom: 1px solid;
+        width: 85%;
+        height: 30px;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+        .centered-form input[type="text"]:focus,
+        .centered-form input[type="password"]:focus {
+            border: 3px solid #555;
+        }
+
+    .centered-form input[type="submit"] {
+        background-color: rgb(40, 120, 255);
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        float: right;
+        margin-bottom: 10px;
+    }
+
+        .centered-form input[type="submit"]:hover {
+            background-color: #1e88e5;
+        }
+
+    .centered-form input[type="radio"],
+    .centered-form label {
+        font-size: 20px;
+        cursor: pointer;
+        margin-bottom: 15px;
+        margin-left: 10px;
+    }
+
+    .centered-form input[type="radio"] {
+        width: 15px;
+        height: 15px;
+    }
