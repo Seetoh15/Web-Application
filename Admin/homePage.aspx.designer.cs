@@ -13,5 +13,32 @@ namespace WAPP_Assignment.Admin
 
     public partial class createProfileEdu
     {
+
+        /// <summary>
+        /// lblmemberCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblmemberCount;
+
+        /// <summary>
+        /// lbleducatorCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbleducatorCount;
+
+        /// <summary>
+        /// lbladminCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbladminCount;
     }
 }
