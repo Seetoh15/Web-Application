@@ -12,11 +12,33 @@ namespace WAPP_Assignment.Educator
     {
         private string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-        public DataTable GetData()
+        public DataTable GetForumData()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM post", connection);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT post.post_id, post.title, post.content, post.created_at, end_user.username, end_user.profile_pic, COUNT(comment.comment_id) AS comment_count FROM post JOIN end_user ON post.id = end_user.id LEFT JOIN comment ON post.post_id = comment.post_id GROUP BY post.post_id, post.title, post.content, post.created_at, end_user.username, end_user.profile_pic ORDER BY post.post_id", connection);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+        }
+
+        public DataTable GetPost(int post_id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM post WHERE post_id = '" + post_id + "'", connection);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+        }
+
+        public DataTable GetComment(int post_id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM comment WHERE post_id = '" + post_id + "'", connection);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
                 return dataTable;
