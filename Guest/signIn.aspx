@@ -89,7 +89,7 @@
         
         <div class="signup-link">
             <asp:Label ID="Label10" runat="server" Text="Already have an account?"></asp:Label>
-            &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click" CausesValidation="false">Log In</asp:LinkButton>
+            &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CssClass="signup-button" OnClick="LinkButton2_Click"  CausesValidation="false">Log In</asp:LinkButton>
         &nbsp;</div>
     </div>
 </asp:Content>
