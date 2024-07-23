@@ -290,6 +290,7 @@
     <Compile Include="Educator\course.aspx.designer.cs">
       <DependentUpon>course.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Educator\dataAccess.cs" />
     <Compile Include="Educator\forum.aspx.cs">
       <DependentUpon>forum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -372,7 +373,6 @@
     </Compile>
     <Compile Include="Member\template.Master.cs">
       <DependentUpon>template.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Member\template.Master.designer.cs">
       <DependentUpon>template.Master</DependentUpon>
