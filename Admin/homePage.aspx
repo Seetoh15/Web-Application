@@ -20,14 +20,15 @@
                 <div class="card-body">
                     <div>
                         <div class="text-students">
-                            Students
+                            Members
                         </div>
                         <div class="font-weight">
-                            0
+                             <asp:Label ID="lblmemberCount" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                     <div>
-                        <i class="fas fa-solid fa-user fa-2x"></i>
+                        <!--Icon from font awesome-->
+                        <i class="fas fa-solid fa-user fa-2x"></i> 
                     </div>
                 </div>
             </div>
@@ -38,13 +39,14 @@
                 <div class="card-body">
                     <div>
                         <div class="text-students text-info">
-                            Projects
+                            Educators
                         </div>
                         <div class="font-weight">
-                            0
+                            <asp:Label ID="lbleducatorCount" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                     <div>
+                        <!--Icon from font awesome-->
                         <i class=" fas fa-solid fa-book fa-2x" ></i>
                     </div>
                 </div>
@@ -56,14 +58,15 @@
                 <div class="card-body">
                     <div>
                         <div class="text-students text-warning">
-                            Tasks
+                            Admins
                         </div>
                         <div class="font-weight">
-                            0
+                            <asp:Label ID="lbladminCount" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                     <div>
-                        <i class="fas fa-solid fa-comment fa-2x"></i>
+                        <!--Icon from font awesome-->
+                        <i class="fas fa-solid fa-user fa-2x"></i>
                     </div>
                 </div>
             </div>
@@ -83,17 +86,19 @@
         <table>
             <thead>
                 <tr>
-                    <th>Profile pic</th>
                     <th>Name</th>
-                    <th>Name</th>
+                    <th>User Type</th>
+                    <th>Approve</th>
+                    <th>Reject</th>
 
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><img src="#" /></td>
-                    <td><button>Delete</button></td>
-                    <td><button>Delete</button></td>
+                    <td></td>
+                    <td></td>
+                    <td><button>Approve</button></td>
+                    <td><button>Reject</button></td>
                 </tr>
             </tbody>
         </table>

@@ -28,6 +28,7 @@
                     <th>Country</th>
                     <th>Gender</th>
                     <th>Action</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +39,7 @@
                     <td>2</td>
                     <td>2</td>
                     <td>2</td>
+                    <td><button>edit</button></td>
                     <td><button>Delete</button></td>
                 </tr>
             </tbody>
