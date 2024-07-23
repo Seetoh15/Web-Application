@@ -169,10 +169,25 @@
     <Content Include="Guest\template.css" />
     <Content Include="Guest\guesthome.aspx" />
     <Content Include="Guest\yip.png" />
+    <Content Include="Member\course.css" />
+    <Content Include="Member\course.js" />
+    <Content Include="Member\courseSelection.aspx" />
+    <Content Include="Member\english.aspx" />
+    <Content Include="Member\english.css" />
+    <Content Include="Member\englishQuiz.aspx" />
+    <Content Include="Member\engQuiz.css" />
+    <Content Include="Member\engQuiz.js" />
+    <Content Include="Member\math.aspx" />
+    <Content Include="Member\math.css" />
+    <Content Include="Member\mathQuiz.aspx" />
+    <Content Include="Member\mathQuiz.css" />
+    <Content Include="Member\mathQuiz.js" />
+    <Content Include="Member\template.css" />
     <Content Include="template.css" />
     <Content Include="Guest\template.Master" />
     <Content Include="Admin\template.Master" />
     <Content Include="Educator\template.Master" />
+    <Content Include="Member\template.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -369,6 +384,48 @@
     <Compile Include="Guest\guesthome.aspx.designer.cs">
       <DependentUpon>guesthome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Member\courseSelection.aspx.cs">
+      <DependentUpon>courseSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\courseSelection.aspx.designer.cs">
+      <DependentUpon>courseSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\english.aspx.cs">
+      <DependentUpon>english.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\english.aspx.designer.cs">
+      <DependentUpon>english.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\englishQuiz.aspx.cs">
+      <DependentUpon>englishQuiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\englishQuiz.aspx.designer.cs">
+      <DependentUpon>englishQuiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\math.aspx.cs">
+      <DependentUpon>math.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\math.aspx.designer.cs">
+      <DependentUpon>math.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\mathQuiz.aspx.cs">
+      <DependentUpon>mathQuiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\mathQuiz.aspx.designer.cs">
+      <DependentUpon>mathQuiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\template.Master.cs">
+      <DependentUpon>template.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\template.Master.designer.cs">
+      <DependentUpon>template.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -400,7 +457,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Member\" />
+    <Folder Include="Member\echapters\" />
+    <Folder Include="Member\mchapters\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
