@@ -88,3 +88,11 @@ nav {
     align-items: center;
     justify-content: center;
 }
+
+
+.link-button {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
