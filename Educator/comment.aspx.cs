@@ -25,7 +25,7 @@ namespace WAPP_Assignment.Educator
                     {
                         // Load the post details and comments
                         LoadPostDetails(post_id);
-                        //LoadComments(postId);
+                        LoadComments(post_id);
                     }
                 }
             }
@@ -36,7 +36,7 @@ namespace WAPP_Assignment.Educator
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             con.Open();
 
-            SqlDataAdapter da = new SqlDataAdapter("SELECT post.title, post.content, end_user.username, end_user.profile_pic, post.created_at FROM post JOIN end_user ON post.id = end_user.id WHERE post.post_id = '" + post_id + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT post.title, post.content, end_user.username, end_user.profile_pic, post.created_at, post.image FROM post JOIN end_user ON post.id = end_user.id WHERE post.post_id = '" + post_id + "'", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
 
@@ -51,6 +51,33 @@ namespace WAPP_Assignment.Educator
                 imgProfilePic.ImageUrl = dt.Rows[0][3].ToString();
             }
             litCreatedAt.Text = dt.Rows[0][4].ToString();
+            if (dt.Rows[0][5].ToString() == "")
+            {
+                postImage.Visible = false;
+            } else
+            {
+                postImage.ImageUrl = dt.Rows[0][5].ToString();
+                postImage.Visible = true;
+            }
+        }
+
+        private void LoadComments(int post_id)
+        {
+            dataAccess da = new dataAccess();
+            DataTable dt = da.GetComment(post_id);
+            CommentRepeater.DataSource = dt;
+            CommentRepeater.DataBind();
+        }
+
+        // Method to handle null profile_pic
+        protected string GetProfilePicUrl(object profilePic)
+        {
+            string defaultImageUrl = "../image/pp.png"; // Path to default image
+            if (profilePic == DBNull.Value || string.IsNullOrEmpty(profilePic.ToString()))
+            {
+                return defaultImageUrl;
+            }
+            return profilePic.ToString();
         }
     }
 }
