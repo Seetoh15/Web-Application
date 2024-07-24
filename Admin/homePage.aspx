@@ -23,12 +23,12 @@
                             Members
                         </div>
                         <div class="font-weight">
-                             <asp:Label ID="lblmemberCount" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lblmemberCount" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                     <div>
                         <!--Icon from font awesome-->
-                        <i class="fas fa-solid fa-user fa-2x"></i> 
+                        <i class="fas fa-solid fa-user fa-2x"></i>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                     </div>
                     <div>
                         <!--Icon from font awesome-->
-                        <i class=" fas fa-solid fa-book fa-2x" ></i>
+                        <i class=" fas fa-solid fa-book fa-2x"></i>
                     </div>
                 </div>
             </div>
@@ -84,26 +84,26 @@
     </div>
 
     <div class="header_fixed small-table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>User Type</th>
-                    <th>Approve</th>
-                    <th>Reject</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td><button>Approve</button></td>
-                    <td><button>Reject</button></td>
-                </tr>
-            </tbody>
-        </table>
+        <asp:GridView ID="PendingUsersGridView" runat="server" AutoGenerateColumns="False" OnRowCommand="PendingUsersGridView_RowCommand" EmptyDataText="No pending users found.">
+            <Columns>
+                <asp:BoundField DataField="Name" HeaderText="Name" />
+                <asp:BoundField DataField="User_Type" HeaderText="User Type" />
+                <asp:TemplateField HeaderText="Approve">
+                    <ItemTemplate>
+                        <asp:Button ID="ApproveButton" runat="server" CommandName="Approve" CommandArgument='<%# Eval("id") %>' Text="Approve" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Reject">
+                    <ItemTemplate>
+                        <asp:Button ID="RejectButton" runat="server" CommandName="Reject" CommandArgument='<%# Eval("id") %>' Text="Reject" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
     </div>
+
+
+
 
     <!-- FontAwesome script and Charts-->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
