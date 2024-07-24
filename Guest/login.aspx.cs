@@ -45,7 +45,7 @@ namespace WAPP_Assignment.Guest
                     if (user_type == "Admin")
                         Response.Redirect("/Admin/homePage.aspx");
                     else if (user_type == "Member")
-                        Response.Redirect("courseSelection.aspx");
+                        Response.Redirect("/Member/courseSelection.aspx");
                     else if (user_type == "Educator")
                         Response.Redirect("educator.aspx");
 
