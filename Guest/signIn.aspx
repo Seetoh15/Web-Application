@@ -84,7 +84,7 @@
         <asp:Label ID="SuccessMsg" runat="server" CssClass="success-message" Visible="false"></asp:Label> 
         <br />
 
-        <asp:Button ID="signup" runat="server" Text="Sign Up" CssClass="auto-style2" OnClick="ButtonSignup_Click" Width="400px" />
+        <asp:Button ID="signup" runat="server" Text="Sign Up" CssClass="login-button" OnClick="ButtonSignup_Click" />
         <br />
         
         <div class="signup-link">
