@@ -73,8 +73,9 @@
         </div>
     </div>
 
-    <div class="charts">
 
+    <div class="charts">
+        <asp:ScriptManager runat="server" EnablePageMethods="true"></asp:ScriptManager>
         <div class="charts-card">
             <p class="chart-title">Total Users</p>
             <div id="bar-chart"></div>
@@ -107,6 +108,8 @@
     <!-- FontAwesome script and Charts-->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.50.0/apexcharts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
     <!-- Custom JS -->
     <script src="homePage.js"></script>

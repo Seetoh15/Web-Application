@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Services;
 
 namespace WAPP_Assignment.Admin
 {
@@ -93,6 +94,44 @@ namespace WAPP_Assignment.Admin
                 }
             }
         }
+
+        [System.Web.Services.WebMethod]
+        public static int[] GetUserCounts()
+        {
+            int[] counts = new int[3]; // 0: Educators, 1: Members, 2: Admins
+
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    // Queries to count each user type
+                    string educatorQuery = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Educator'";
+                    string memberQuery = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Member'";
+                    string adminQuery = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Admin'";
+
+                    // Execute each query and store the counts
+                    SqlCommand educatorCommand = new SqlCommand(educatorQuery, con);
+                    counts[0] = (int)educatorCommand.ExecuteScalar();
+
+                    SqlCommand memberCommand = new SqlCommand(memberQuery, con);
+                    counts[1] = (int)memberCommand.ExecuteScalar();
+
+                    SqlCommand adminCommand = new SqlCommand(adminQuery, con);
+                    counts[2] = (int)adminCommand.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception (log it, display error, etc.)
+                }
+            }
+
+            return counts;
+        }
+
     }
 
 
