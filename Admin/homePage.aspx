@@ -83,23 +83,26 @@
 
     </div>
 
-    <div class="header_fixed small-table-container">
+    <div class="header_fixed thead th small-table-container">
         <asp:GridView ID="PendingUsersGridView" runat="server" AutoGenerateColumns="False" OnRowCommand="PendingUsersGridView_RowCommand" EmptyDataText="No pending users found.">
             <Columns>
                 <asp:BoundField DataField="Name" HeaderText="Name" />
                 <asp:BoundField DataField="User_Type" HeaderText="User Type" />
                 <asp:TemplateField HeaderText="Approve">
                     <ItemTemplate>
-                        <asp:Button ID="ApproveButton" runat="server" CommandName="Approve" CommandArgument='<%# Eval("id") %>' Text="Approve" />
+                        <asp:Button ID="ApproveButton" runat="server" CommandName="Approve" CommandArgument='<%# Eval("ID") %>' Text="Approve"
+                            OnClientClick="return confirm('Are you sure you want to approve this user?');" />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Reject">
                     <ItemTemplate>
-                        <asp:Button ID="RejectButton" runat="server" CommandName="Reject" CommandArgument='<%# Eval("id") %>' Text="Reject" />
+                        <asp:Button ID="RejectButton" runat="server" CommandName="Reject" CommandArgument='<%# Eval("ID") %>' Text="Reject"
+                            OnClientClick="return confirm('Are you sure you want to reject this user?');" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
+
     </div>
 
 
