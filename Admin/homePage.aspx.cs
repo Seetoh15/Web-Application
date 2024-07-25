@@ -35,7 +35,7 @@ namespace WAPP_Assignment.Admin
                 con.Open();
 
                 // Define the SQL query to count members
-                string query = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Member'";
+                string query = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Member' AND status = 'Accepted'";
 
                 // Create a SqlCommand with the query and connection
                 SqlCommand command = new SqlCommand(query, con);
@@ -69,7 +69,7 @@ namespace WAPP_Assignment.Admin
                 con.Open();
 
                 // Define the SQL query to count members
-                string query = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Educator'";
+                string query = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Educator' AND status = 'Accepted'";
 
                 // Create a SqlCommand with the query and connection
                 SqlCommand command = new SqlCommand(query, con);
