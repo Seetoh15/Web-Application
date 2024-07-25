@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Services;
+using System.Data;
 
 namespace WAPP_Assignment.Admin
 {
@@ -17,17 +18,16 @@ namespace WAPP_Assignment.Admin
             if (!IsPostBack)
             {
                 DisplayMemberCount();
+                DisplayEducatorCount();
+                LoadAndBindPendingUsers();
             }
 
-            if (!IsPostBack)
-            {
-                DisplayEducatorCount();
-            }
+
         }
 
         private void DisplayMemberCount()
         {
-            
+
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
 
             try
@@ -131,6 +131,66 @@ namespace WAPP_Assignment.Admin
 
             return counts;
         }
+        private void LoadAndBindPendingUsers()
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "SELECT id, name, user_type FROM end_user WHERE Status = 'Pending'";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    try
+                    {
+                        con.Open();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        PendingUsersGridView.DataSource = dt;
+                        PendingUsersGridView.DataBind();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception (e.g., log the error)
+                        Response.Write("Error: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        protected void PendingUsersGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Approve" || e.CommandName == "Reject")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string query = "";
+                    if (e.CommandName == "Approve")
+                    {
+                        query = "UPDATE end_user SET Status = 'Accepted' WHERE id = @id";
+                    }
+                    else if (e.CommandName == "Reject")
+                    {
+                        query = "DELETE FROM end_user WHERE id = @id";
+                    }
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                // Reload the page to refresh the data
+                Response.Redirect(Request.RawUrl);
+            }
+        }
+
+
+
 
     }
 

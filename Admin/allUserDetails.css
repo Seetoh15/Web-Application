@@ -4,7 +4,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -47,6 +46,8 @@ th, td {
     border-bottom: 1px solid #dddddd;
     padding: 10px 20px;
     font-size: 14px;
+    border-color: black;
+    text-align: center;
 }
 
     td img {
@@ -62,12 +63,6 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
     background-color: #edeef1;
-}
-
-tr:hover td {
-    color: #44b478;
-    cursor: pointer;
-    background-color: #ffffff;
 }
 
 td button {
@@ -164,7 +159,7 @@ button {
 
     .small-table-container th,
     .small-table-container td {
-        border-bottom: 1px solid #dddddd;
+
         padding: 10px 20px;
         font-size: 14px;
     }
