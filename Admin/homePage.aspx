@@ -91,18 +91,17 @@
                 <asp:TemplateField HeaderText="Approve">
                     <ItemTemplate>
                         <asp:Button ID="ApproveButton" runat="server" CommandName="Approve" CommandArgument='<%# Eval("ID") %>' Text="Approve"
-                            OnClientClick="return confirm('Are you sure you want to approve this user?');" />
+                            OnClientClick="return confirm('Are you sure you want to approve this user?');" CssClass="search-button"/>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Reject">
                     <ItemTemplate>
                         <asp:Button ID="RejectButton" runat="server" CommandName="Reject" CommandArgument='<%# Eval("ID") %>' Text="Reject"
-                            OnClientClick="return confirm('Are you sure you want to reject this user?');" />
+                            OnClientClick="return confirm('Are you sure you want to reject this user?');" CssClass="search-button"/>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
-
     </div>
 
 

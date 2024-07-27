@@ -17,72 +17,47 @@ namespace WAPP_Assignment.Admin
         {
             if (!IsPostBack)
             {
-                DisplayMemberCount();
-                DisplayEducatorCount();
+                DisplayAllCount();
                 LoadAndBindPendingUsers();
             }
 
 
         }
 
-        private void DisplayMemberCount()
+        private void DisplayAllCount()
         {
-
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
 
             try
             {
                 con.Open();
 
-                // Define the SQL query to count members
-                string query = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Member' AND status = 'Accepted'";
+                // Define the SQL queries to count members and admins
+                string queryM = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Member' AND status = 'Accepted'";
+                string queryA = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Admin' AND status = 'Accepted'";
+                string queryE = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Educator' AND status = 'Accepted'";
 
-                // Create a SqlCommand with the query and connection
-                SqlCommand command = new SqlCommand(query, con);
-
-                // Execute the query and get the member count
-                int memberCount = (int)command.ExecuteScalar();
-
-                // Display the count in the label
+                // Create a SqlCommand for the member count query
+                SqlCommand commandM = new SqlCommand(queryM, con);
+                int memberCount = (int)commandM.ExecuteScalar();
                 lblmemberCount.Text = memberCount.ToString();
-            }
-            catch (Exception ex)
-            {
-                // Display any error messages
-                lblmemberCount.Text = "Error: " + ex.Message;
-            }
-            finally
-            {
-                // Ensure the connection is closed
-                if (con.State == System.Data.ConnectionState.Open)
-                {
-                    con.Close();
-                }
-            }
-        }
 
-        private void DisplayEducatorCount()
-        {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            try
-            {
-                con.Open();
+                // Create a SqlCommand for the admin count query
+                SqlCommand commandA = new SqlCommand(queryA, con);
+                int adminCount = (int)commandA.ExecuteScalar();
+                lbladminCount.Text = adminCount.ToString();
 
-                // Define the SQL query to count members
-                string query = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Educator' AND status = 'Accepted'";
-
-                // Create a SqlCommand with the query and connection
-                SqlCommand command = new SqlCommand(query, con);
-
-                // Execute the query and get the member count
-                int educatorCount = (int)command.ExecuteScalar();
-
-                // Display the count in the label
+                // Create a SqlCommand for the educator count query
+                SqlCommand commandE = new SqlCommand(queryE, con);
+                int educatorCount = (int)commandE.ExecuteScalar();
                 lbleducatorCount.Text = educatorCount.ToString();
+
             }
             catch (Exception ex)
             {
                 // Display any error messages
+                lblmemberCount.Text = "Error: " + ex.Message;               
+                lbladminCount.Text = "Error: " + ex.Message;
                 lbleducatorCount.Text = "Error: " + ex.Message;
             }
             finally
@@ -95,42 +70,6 @@ namespace WAPP_Assignment.Admin
             }
         }
 
-        [System.Web.Services.WebMethod]
-        public static int[] GetUserCounts()
-        {
-            int[] counts = new int[3]; // 0: Educators, 1: Members, 2: Admins
-
-            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    con.Open();
-
-                    // Queries to count each user type
-                    string educatorQuery = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Educator'";
-                    string memberQuery = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Member'";
-                    string adminQuery = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Admin'";
-
-                    // Execute each query and store the counts
-                    SqlCommand educatorCommand = new SqlCommand(educatorQuery, con);
-                    counts[0] = (int)educatorCommand.ExecuteScalar();
-
-                    SqlCommand memberCommand = new SqlCommand(memberQuery, con);
-                    counts[1] = (int)memberCommand.ExecuteScalar();
-
-                    SqlCommand adminCommand = new SqlCommand(adminQuery, con);
-                    counts[2] = (int)adminCommand.ExecuteScalar();
-                }
-                catch (Exception ex)
-                {
-                    // Handle exception (log it, display error, etc.)
-                }
-            }
-
-            return counts;
-        }
         private void LoadAndBindPendingUsers()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
@@ -190,9 +129,41 @@ namespace WAPP_Assignment.Admin
         }
 
 
+        // javascript 
 
+        [System.Web.Services.WebMethod]
+        public static int[] GetUserCounts()
+        {
+            int[] counts = new int[3]; // 0: Educators, 1: Members, 2: Admins
 
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    // Queries to count each user type
+                    string educatorQuery = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Educator'";
+                    string memberQuery = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Member'";
+                    string adminQuery = "SELECT COUNT(*) FROM end_user WHERE User_type = 'Admin'";
+
+                    // Execute each query and store the counts
+                    SqlCommand educatorCommand = new SqlCommand(educatorQuery, con);
+                    counts[0] = (int)educatorCommand.ExecuteScalar();
+
+                    SqlCommand memberCommand = new SqlCommand(memberQuery, con);
+                    counts[1] = (int)memberCommand.ExecuteScalar();
+
+                    SqlCommand adminCommand = new SqlCommand(adminQuery, con);
+                    counts[2] = (int)adminCommand.ExecuteScalar();
+                }
+                catch (Exception)
+                {
+                }
+            }
+            return counts;
+        }
     }
-
-
 }
