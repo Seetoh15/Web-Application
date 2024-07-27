@@ -27,7 +27,7 @@ namespace WAPP_Assignment.Educator
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT comment.content, comment.created_at, end_user.username, end_user.profile_pic FROM comment INNER JOIN end_user ON comment.id = end_user.id WHERE comment.post_id = '" + post_id + "' ORDER BY comment.created_at", connection);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT comment.content, comment.created_at, end_user.username, end_user.profile_pic FROM comment INNER JOIN end_user ON comment.id = end_user.id WHERE comment.post_id = '" + post_id + "' ORDER BY comment.created_at DESC", connection);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
                 return dataTable;

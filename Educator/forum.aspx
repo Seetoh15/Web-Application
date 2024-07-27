@@ -6,11 +6,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="width:100%; height:100%; display:flex; flex-direction:column; align-items:center; gap:20px; padding-top:20px;">
-        <div class="search">
-            <span class="search-icon material-symbols-outlined">search</span>
-            <%--<input class="search-input" type="search" placeholder="Search" />--%>
-            <%--<input id="search-input" class="search-input" type="text" placeholder="Search" />--%>
-            <asp:TextBox ID="TextBox1" runat="server" CssClass="search-input" placeholder="Search"></asp:TextBox>
+        <div style="display:flex; flex-direction:row;">
+            <div class="search">
+                <span class="search-icon material-symbols-outlined">search</span>
+                <%--<input class="search-input" type="search" placeholder="Search" />--%>
+                <%--<input id="search-input" class="search-input" type="text" placeholder="Search" />--%>
+                <asp:TextBox ID="TextBox1" runat="server" CssClass="search-input" placeholder="Search"></asp:TextBox>
+            </div>
+            <asp:Button ID="AddPost" runat="server" Text="Add Post" />
         </div>
         <div style="width:70%; height:100%; display:flex; flex-direction:column;">
             <asp:Repeater ID="PostsRepeater" runat="server">

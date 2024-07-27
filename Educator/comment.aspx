@@ -26,6 +26,10 @@
                     </div>
                 </div>
             </div>
+            <div style="display:flex; flex-direction:row;">
+                <textarea id="TextArea1" cols="20" rows="2"></textarea>
+                <asp:Button ID="Button1" runat="server" Text="Button" />
+            </div>
             <div style="width:80%">
                 <asp:Repeater ID="CommentRepeater" runat="server">
                     <ItemTemplate>
@@ -42,7 +46,6 @@
                                 </div>
                             </div>
                         </div>
-                        <hr />
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
