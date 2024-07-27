@@ -59,8 +59,8 @@
         <div class="form-group">
             <asp:Label ID="Label6" runat="server" Text="Gender:"></asp:Label>
             <asp:DropDownList ID="gender" runat="server" CssClass="auto-style1" Width="416px">
-                <asp:ListItem Text="Male" Value="male"></asp:ListItem>
-                <asp:ListItem Text="Female" Value="female"></asp:ListItem>
+                <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+                <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
             </asp:DropDownList>
         </div>
 
