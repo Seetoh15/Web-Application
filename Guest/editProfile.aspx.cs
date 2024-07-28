@@ -52,7 +52,7 @@ namespace WAPP_Assignment.Guest
                 email.Text = dt.Rows[0][5].ToString();
                 profile_pic.ImageUrl = dt.Rows[0][6].ToString();
                 img.Text = dt.Rows[0][6].ToString();
-                user_type.SelectedItem.Text = dt.Rows[0][7].ToString();
+                user_type.Text = dt.Rows[0][7].ToString();
                 country.Text = dt.Rows[0][8].ToString();
             }
         }

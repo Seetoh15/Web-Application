@@ -33,5 +33,10 @@ namespace WAPP_Assignment.Educator
             }
             return profilePic.ToString();
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
