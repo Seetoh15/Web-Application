@@ -15,6 +15,15 @@ namespace WAPP_Assignment.Admin
     {
 
         /// <summary>
+        /// btnGenerateReport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnGenerateReport;
+
+        /// <summary>
         /// lblmemberCount control.
         /// </summary>
         /// <remarks>

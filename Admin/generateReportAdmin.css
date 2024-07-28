@@ -1,0 +1,86 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+/* Custom CSS for the layout */
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.report-info {
+    margin-top: 20px;
+}
+
+.report-date,
+.admin-info {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.admin-info {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+    .report-date strong,
+    .admin-info strong {
+        color: #555;
+    }
+
+asp\:Label {
+    font-weight: bold;
+    color: #444;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .table th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .table tr:hover {
+        background-color: #f1f1f1;
+    }

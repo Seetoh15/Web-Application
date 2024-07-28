@@ -56,7 +56,7 @@ namespace WAPP_Assignment.Admin
             catch (Exception ex)
             {
                 // Display any error messages
-                lblmemberCount.Text = "Error: " + ex.Message;               
+                lblmemberCount.Text = "Error: " + ex.Message;
                 lbladminCount.Text = "Error: " + ex.Message;
                 lbleducatorCount.Text = "Error: " + ex.Message;
             }
@@ -165,5 +165,12 @@ namespace WAPP_Assignment.Admin
             }
             return counts;
         }
+
+
+        protected void btnGenerateReport_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("generateReportAdmin.aspx");
+        }
+
     }
 }

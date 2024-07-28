@@ -50,6 +50,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -111,6 +112,8 @@
     <Content Include="Admin\editProfileAdmin.aspx" />
     <Content Include="Admin\editProfileAdmin.css" />
     <Content Include="Admin\educatorDetails.aspx" />
+    <Content Include="Admin\generateReportAdmin.aspx" />
+    <Content Include="Admin\generateReportAdmin.css" />
     <Content Include="Admin\homePage.aspx" />
     <Content Include="Admin\homePage.css" />
     <Content Include="Admin\homePage.js" />
@@ -194,6 +197,7 @@
     <Content Include="Admin\template.Master" />
     <Content Include="Educator\template.Master" />
     <Content Include="Member\template.Master" />
+    <Content Include=".editorconfig" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -250,6 +254,13 @@
     </Compile>
     <Compile Include="Admin\educatorDetails.aspx.designer.cs">
       <DependentUpon>educatorDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\generateReportAdmin.aspx.cs">
+      <DependentUpon>generateReportAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\generateReportAdmin.aspx.designer.cs">
+      <DependentUpon>generateReportAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\homePage.aspx.cs">
       <DependentUpon>homePage.aspx</DependentUpon>

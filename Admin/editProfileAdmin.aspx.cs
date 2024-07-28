@@ -20,21 +20,23 @@ namespace WAPP_Assignment.Admin
                 Response.Redirect("~/guest/login.aspx");
             }
 
-            if (!Page.IsPostBack)
-            {
-                // Retrieve user ID from query string
-                string userId = Request.QueryString["id"];
+            
 
-                if (!string.IsNullOrEmpty(userId))
+                if (!Page.IsPostBack)
                 {
-                    LoadUserDetails(userId);
+                    // Retrieve user ID from query string
+                    string userId = Request.QueryString["id"];
+
+                    if (!string.IsNullOrEmpty(userId))
+                    {
+                        LoadUserDetails(userId);
+                    }
+                    else
+                    {
+                        // Handle the case where no user ID is provided
+                        Response.Write("Invalid user ID.");
+                    }
                 }
-                else
-                {
-                    // Handle the case where no user ID is provided
-                    Response.Write("Invalid user ID.");
-                }
-            }
         }
 
         private void LoadUserDetails(string userId)
@@ -111,23 +113,20 @@ namespace WAPP_Assignment.Admin
                     cmd.Parameters.AddWithValue("@id", userId);
 
                     cmd.ExecuteNonQuery();
-                    
+
                 }
-                
+
             }
             if (Session["PreviousPage"] != null)
             {
-                Response.Redirect(Session["PreviousPage"].ToString());
                 Response.Redirect("editProfileAdmin.aspx?id=" + userId); // Refresh the page to reflect changes
             }
-            
+
         }
 
-        protected void LinkButton2_Click(object sender, EventArgs e)
+        protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            // Logic for the "Return to Home" link button click event
-            Response.Redirect("/Admin/homePage.aspx"); // Adjust the URL as needed
+            Response.Redirect(Session["PreviousPage"].ToString());
         }
-
     }
 }

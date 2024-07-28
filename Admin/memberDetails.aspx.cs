@@ -27,7 +27,7 @@ namespace WAPP_Assignment.Admin
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "SELECT id, profile_pic, username, name, gender, email, country FROM end_user WHERE User_type = 'Member' AND status = 'Accepted'";
+                string query = "SELECT id, profile_pic, username, name, gender, email, country FROM end_user WHERE user_type = 'Member' AND status = 'Accepted'";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     try
@@ -87,7 +87,7 @@ namespace WAPP_Assignment.Admin
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 // Initial query with the existing WHERE clause
-                string query = "SELECT id, profile_pic, username, name, gender, email, country FROM end_user WHERE User_type = 'Member' AND status = 'Accepted'";
+                string query = "SELECT id, profile_pic, username, name, gender, email, country FROM end_user WHERE user_type = 'Member' AND status = 'Accepted'";
 
                 // Use AND instead of WHERE to add search conditions
                 if (!string.IsNullOrEmpty(searchQuery))
