@@ -45,7 +45,7 @@
 
         <div class="form-group">
             <asp:Label ID="Label8" runat="server" Text="Password:"></asp:Label>
-            <asp:TextBox ID="password" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+            <asp:TextBox ID="password" runat="server" CssClass="form-control" TextMode="Password" ReadOnly="true"></asp:TextBox>
         </div>
 
         <div class="form-group">
@@ -64,7 +64,7 @@
 
         <div class="signup-link">
             <asp:Label ID="Label10" runat="server" Text="Return to"></asp:Label>
-            &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Home</asp:LinkButton>
+            &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">home page</asp:LinkButton>
         </div>
     </div>
 </asp:Content>

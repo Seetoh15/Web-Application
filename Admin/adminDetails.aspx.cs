@@ -55,6 +55,8 @@ namespace WAPP_Assignment.Admin
             int id = Convert.ToInt32(e.CommandArgument);
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
+
+
             if (e.CommandName == "Delete")
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
@@ -73,11 +75,14 @@ namespace WAPP_Assignment.Admin
             }
             else if (e.CommandName == "Edit")
             {
+                // Store the current page URL
+                Session["PreviousPage"] = Request.Url.ToString(); 
                 // Redirect to edit page with user ID as query parameter
                 Response.Redirect("editProfileAdmin.aspx?id=" + id);
             }
         }
 
+        // Search Query
         private void LoadAndBindUsers(string searchQuery = "")
         {
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
