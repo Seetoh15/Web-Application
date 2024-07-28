@@ -10,6 +10,7 @@
         <div class="form-group">
             <asp:Label ID="Label2" runat="server" Text="Name:"></asp:Label>
             <asp:TextBox ID="name" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Display="Dynamic" ErrorMessage="Name is required!" CssClass="error-message" ControlToValidate="name"></asp:RequiredFieldValidator>
         </div>
 
         <div class="form-group">
@@ -20,11 +21,14 @@
         <div class="form-group">
             <asp:Label ID="Label4" runat="server" Text="Email:"></asp:Label>
             <asp:TextBox ID="email" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="email" CssClass="error-message" Display="Dynamic" ErrorMessage="Email is required!"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="email" CssClass="error-message" Display="Dynamic" ErrorMessage="Invalid email format!" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
         </div>
 
         <div class="form-group">
             <asp:Label ID="Label5" runat="server" Text="Country:"></asp:Label>
             <asp:TextBox ID="country" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="country" CssClass="error-message" Display="Dynamic" ErrorMessage="Country is required!"></asp:RequiredFieldValidator>
         </div>
 
         <div class="form-group">
@@ -36,7 +40,7 @@
         </div>
 
         <div class="form-group">
-            <asp:Label ID="Label7" runat="server" Text="Select your role:"></asp:Label>
+            <asp:Label ID="Label7" runat="server" Text="Role:"></asp:Label>
             <asp:DropDownList ID="user_type" runat="server" CssClass="form-control" AutoPostBack="True" Enabled="False">
                 <asp:ListItem Value="Educator">Educator</asp:ListItem>
                 <asp:ListItem Value="Member">Member</asp:ListItem>
@@ -47,6 +51,7 @@
         <div class="form-group">
             <asp:Label ID="Label8" runat="server" Text="Password:"></asp:Label>
             <asp:TextBox ID="password" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="password" CssClass="error-message" Display="Dynamic" ErrorMessage="Password is required!"></asp:RequiredFieldValidator>
         </div>
 
         <div class="form-group">
@@ -59,14 +64,11 @@
         <asp:Image ID="profile_pic" runat="server" Height="240px" Width="289px" />
 
         <asp:Label ID="ErrorMsg" runat="server" CssClass="error-message"></asp:Label>
+        <asp:Label ID="SuccessMsg" runat="server" CssClass="success-message" Visible="False"></asp:Label>
         <br />
 
         <asp:Button ID="save" runat="server" Text="Save Profile" CssClass="save-button" OnClick="ButtonSaveProfile_Click" />
         <br />
 
-        <div class="signup-link">
-            <asp:Label ID="Label10" runat="server" Text="Return to"></asp:Label>
-            &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Home</asp:LinkButton>
-        </div>
     </div>
 </asp:Content>

@@ -133,6 +133,7 @@
     <Content Include="Educator\course.aspx" />
     <Content Include="Educator\forum.aspx" />
     <Content Include="Educator\forum.css" />
+    <Content Include="Educator\forum.js" />
     <Content Include="Educator\template.css" />
     <Content Include="Educator\test.aspx" />
     <Content Include="favicon.ico" />

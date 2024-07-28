@@ -13,7 +13,7 @@
                 <%--<input id="search-input" class="search-input" type="text" placeholder="Search" />--%>
                 <asp:TextBox ID="TextBox1" runat="server" CssClass="search-input" placeholder="Search"></asp:TextBox>
             </div>
-            <asp:Button ID="AddPost" runat="server" Text="Add Post" />
+            <button id="popupBtn">Click me</button>
         </div>
         <div style="width:70%; height:100%; display:flex; flex-direction:column;">
             <asp:Repeater ID="PostsRepeater" runat="server">
@@ -50,4 +50,13 @@
             <asp:GridView ID="PostsGridView" runat="server"></asp:GridView>
         </div>
     </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <p>This is a popup!</p>
+        </div>
+    </div>
+
+    <script src="forum.js"></script>
 </asp:Content>

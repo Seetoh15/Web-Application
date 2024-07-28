@@ -25,7 +25,7 @@
                 </ul>
             </nav>
             <div id="pic_container">
-                   <img class="pic" src="../image/pp.png" alt="Profile Picture" />
+                <asp:Image ID="profile_pic" runat="server" CssClass="pic" AlternateText="Profile Picture" />
             </div>
         </header>
         <div id="content">
