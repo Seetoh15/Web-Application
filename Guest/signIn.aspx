@@ -81,7 +81,7 @@
         </div>
 
         <asp:Label ID="ErrorMsg" runat="server" CssClass="error-message"></asp:Label>
-        <asp:Label ID="SuccessMsg" runat="server" CssClass="success-message" Visible="false"></asp:Label> 
+        <asp:Label ID="SuccessMsg" runat="server" CssClass="success-message" Visible="False"></asp:Label> 
         <br />
 
         <asp:Button ID="signup" runat="server" Text="Sign Up" CssClass="login-button" OnClick="ButtonSignup_Click" />
