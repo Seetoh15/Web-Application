@@ -14,21 +14,21 @@ namespace WAPP_Assignment.Educator
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["username"] == null)
-            {
-                Response.Redirect("../Guest/login.aspx");
-            }
-            else
-            {
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-                con.Open();
+            //if (Session["username"] == null)
+            //{
+            //    Response.Redirect("../Guest/login.aspx");
+            //}
+            //else
+            //{
+            //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            //    con.Open();
 
-                SqlDataAdapter da = new SqlDataAdapter("select profile_pic from end_user where username = '" + Session["username"] + "'", con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+            //    SqlDataAdapter da = new SqlDataAdapter("select profile_pic from end_user where username = '" + Session["username"] + "'", con);
+            //    DataTable dt = new DataTable();
+            //    da.Fill(dt);
 
-                profile_pic.ImageUrl = dt.Rows[0][0].ToString();
-            }
+            //    profile_pic.ImageUrl = dt.Rows[0][0].ToString();
+            //}
         }
     }
 }

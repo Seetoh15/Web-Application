@@ -6,20 +6,23 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="width:100%; height:100%; display:flex; flex-direction:column; align-items:center; gap:20px; padding-top:20px;">
-        <div style="display:flex; flex-direction:row;">
-            <div class="search">
-                <span class="search-icon material-symbols-outlined">search</span>
-                <%--<input class="search-input" type="search" placeholder="Search" />--%>
-                <%--<input id="search-input" class="search-input" type="text" placeholder="Search" />--%>
-                <asp:TextBox ID="TextBox1" runat="server" CssClass="search-input" placeholder="Search"></asp:TextBox>
+        <div style="display:flex; justify-content:space-between; align-items:center; width: 70%; margin: 20px auto;">
+            <div style="display:flex; flex-direction:row; width:50%">
+                <div class="search">
+                    <span class="search-icon material-symbols-outlined">search</span>
+                    <%--<input class="search-input" type="search" placeholder="Search" />--%>
+                    <%--<input id="search-input" class="search-input" type="text" placeholder="Search" />--%>
+                    <asp:TextBox ID="txtSearch" runat="server" CssClass="search-input" placeholder="Search"></asp:TextBox>
+                </div>
+                <asp:Button ID="searchBtn" runat="server" Text="Search" CssClass="search-button" OnClick="searchBtn_Click" />
             </div>
-            <button id="popupBtn">Click me</button>
+            <button id="popupBtn">Add Post</button>
         </div>
-        <div style="width:70%; height:100%; display:flex; flex-direction:column;">
+        <div style="width:70%; height:100%; display:flex; flex-direction:column; gap:10px;">
             <asp:Repeater ID="PostsRepeater" runat="server">
                 <ItemTemplate>
                     <a href="comment.aspx?post_id=<%# Eval("post_id") %>">
-                        <div style="height:150px; display:flex; flex-direction:row;">
+                        <div style="height:150px; display:flex; flex-direction:row; box-shadow:0 4px 8px rgba(0, 0, 0, 0.1); padding:10px; background:white; border-radius:10px;">
                             <div style="display:flex; flex-direction:column; width:75%;">
                                 <div style="display:flex; flex-direction:row; margin-top:10px; width:100%;">
                                     <img src="<%# GetProfilePicUrl(Eval("profile_pic")) %>" alt="Profile picture" />
@@ -44,10 +47,8 @@
                             </div>
                         </div>
                     </a>
-                    <hr />
                 </ItemTemplate>
             </asp:Repeater>
-            <asp:GridView ID="PostsGridView" runat="server"></asp:GridView>
         </div>
     </div>
 
@@ -57,11 +58,14 @@
             <h2>Create a New Forum Post</h2>
             <div class="form-group">
                 <asp:TextBox ID="txtTitle" runat="server" Placeholder="Title" CssClass="form-control"></asp:TextBox>
+                <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Title is required!" ControlToValidate="txtTitle" CssClass="error-message"></asp:RequiredFieldValidator>--%>
             </div>
             <div class="form-group">
                 <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine" Rows="5" Placeholder="Content" CssClass="form-control"></asp:TextBox>
+                <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Content is required!" ControlToValidate="txtContent" CssClass="error-message"></asp:RequiredFieldValidator>--%>
             </div>
             <div class="form-group">
+                <asp:Label ID="Label1" runat="server" Text="Upload image (optional):"></asp:Label>
                 <asp:FileUpload ID="FileUpload1" runat="server" CssClass="form-control-file" />
             </div>
             <div class="form-group">

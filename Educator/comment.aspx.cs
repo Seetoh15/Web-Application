@@ -12,7 +12,7 @@ namespace WAPP_Assignment.Educator
 {
     public partial class comment : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+         void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
@@ -78,6 +78,55 @@ namespace WAPP_Assignment.Educator
                 return defaultImageUrl;
             }
             return profilePic.ToString();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (txtComment.Text.Trim() != "")
+            {
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                con.Open();
+
+                SqlDataAdapter da = new SqlDataAdapter("select id from end_user where username = '" + Session["username"] + "'", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                int id = Convert.ToInt32(dt.Rows[0][0]);
+
+                //create record in a table called end_user
+                string query1 = "insert into comment (content, created_at, id, post_id) values (@content, @created_at, @id, @post_id) ";
+                SqlCommand cmd1 = new SqlCommand(query1, con);
+
+                // Get the current date and time
+                DateTime now = DateTime.Now;
+
+                // Format the date and time
+                string formattedDateTime = now.ToString("yyyy-MM-ddTHH:mm:ss");
+
+                int post_id = 0;
+                // Check if post_id is provided in the query string
+                if (Request.QueryString["post_id"] != null)
+                {
+                    // Parse the post_id from the query string
+                    int.TryParse(Request.QueryString["post_id"], out post_id);
+                }
+                else
+                {
+                    return;
+                }
+
+                cmd1.Parameters.AddWithValue("@content", txtComment.Text);
+                cmd1.Parameters.AddWithValue("@created_at", formattedDateTime);
+                cmd1.Parameters.AddWithValue("@id", id);
+                cmd1.Parameters.AddWithValue("@post_id", post_id);
+                cmd1.ExecuteNonQuery();
+                Response.Redirect("comment.aspx?post_id=" + post_id);
+                con.Close();
+            }
+            else
+            {
+                string script = $"alert('Comment cannot be left blank.');";
+                ClientScript.RegisterStartupScript(this.GetType(), "ShowErrorMessage", script, true);
+            }
         }
     }
 }
