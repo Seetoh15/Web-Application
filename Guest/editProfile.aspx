@@ -41,11 +41,7 @@
 
         <div class="form-group">
             <asp:Label ID="Label7" runat="server" Text="Role:"></asp:Label>
-            <asp:DropDownList ID="user_type" runat="server" CssClass="form-control" AutoPostBack="True" Enabled="False">
-                <asp:ListItem Value="Educator">Educator</asp:ListItem>
-                <asp:ListItem Value="Member">Member</asp:ListItem>
-                <asp:ListItem Value="Admin">Admin</asp:ListItem>
-            </asp:DropDownList>
+            <asp:TextBox ID="user_type" runat="server" CssClass="form-control" ReadOnly="True"></asp:TextBox>
         </div>
 
         <div class="form-group">

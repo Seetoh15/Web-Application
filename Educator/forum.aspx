@@ -54,7 +54,19 @@
     <div id="popup" class="popup">
         <div class="popup-content">
             <span class="close">&times;</span>
-            <p>This is a popup!</p>
+            <h2>Create a New Forum Post</h2>
+            <div class="form-group">
+                <asp:TextBox ID="txtTitle" runat="server" Placeholder="Title" CssClass="form-control"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine" Rows="5" Placeholder="Content" CssClass="form-control"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:FileUpload ID="FileUpload1" runat="server" CssClass="form-control-file" />
+            </div>
+            <div class="form-group">
+                <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="btnSubmit_Click" />
+            </div>
         </div>
     </div>
 
