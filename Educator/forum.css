@@ -22,8 +22,8 @@ hr {
 }
 
 .search {
-    --padding: 14px;
-    width: 30%;
+    --padding: 10px;
+    width: 100%;
     display: flex;
     align-items: center;
     padding: var(--padding);
@@ -70,7 +70,6 @@ hr {
     padding: 20px;
     border: 1px solid #888;
     width: 60%; /* Could be more or less, depending on screen size */
-    text-align: center;
 }
 
 /* The close button */
@@ -124,4 +123,45 @@ h2 {
 
     .btn:hover {
         background-color: #0056b3;
+    }
+
+.error-message {
+    color: red;
+}
+
+/* Style the search button */
+.search-button {
+    margin-left: 10px; /* Adjust as needed for spacing */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    padding: 10px 20px; /* Adjust as needed for desired size */
+    display: inline-block;
+    text-align: center;
+}
+
+    .search-button:hover {
+        background-color: #0056b3;
+    }
+
+/* Style the Add Post button */
+#popupBtn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    padding: 14px 20px; /* Adjust as needed for desired size */
+    display: inline-block;
+    text-align: center;
+}
+
+    #popupBtn:hover {
+        background-color: #218838;
     }

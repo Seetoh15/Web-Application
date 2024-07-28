@@ -131,11 +131,14 @@
     <Content Include="Educator\comment.aspx" />
     <Content Include="Educator\comment.css" />
     <Content Include="Educator\course.aspx" />
+    <Content Include="Educator\editQuiz.aspx" />
     <Content Include="Educator\forum.aspx" />
     <Content Include="Educator\forum.css" />
     <Content Include="Educator\forum.js" />
     <Content Include="Educator\template.css" />
     <Content Include="Educator\test.aspx" />
+    <Content Include="Educator\test.css" />
+    <Content Include="Educator\test.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -314,6 +317,13 @@
       <DependentUpon>course.aspx</DependentUpon>
     </Compile>
     <Compile Include="Educator\dataAccess.cs" />
+    <Compile Include="Educator\editQuiz.aspx.cs">
+      <DependentUpon>editQuiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Educator\editQuiz.aspx.designer.cs">
+      <DependentUpon>editQuiz.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Educator\forum.aspx.cs">
       <DependentUpon>forum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
