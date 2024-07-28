@@ -10,7 +10,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container1">
         <h2>Dashboard</h2>
-        <a href="#" class="button"><i class="fas fa-download fa-sm"></i>Generate Report</a>
+        <asp:LinkButton ID="btnGenerateReport" runat="server" CssClass="button" OnClick="btnGenerateReport_Click">
+    <i class="fas fa-download fa-sm"></i>Generate Report
+        </asp:LinkButton>
     </div>
     <!-- Earnings (Monthly) Card Example -->
     <div class="container">
@@ -91,13 +93,13 @@
                 <asp:TemplateField HeaderText="Approve">
                     <ItemTemplate>
                         <asp:Button ID="ApproveButton" runat="server" CommandName="Approve" CommandArgument='<%# Eval("ID") %>' Text="Approve"
-                            OnClientClick="return confirm('Are you sure you want to approve this user?');" CssClass="search-button"/>
+                            OnClientClick="return confirm('Are you sure you want to approve this user?');" CssClass="search-button" />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Reject">
                     <ItemTemplate>
                         <asp:Button ID="RejectButton" runat="server" CommandName="Reject" CommandArgument='<%# Eval("ID") %>' Text="Reject"
-                            OnClientClick="return confirm('Are you sure you want to reject this user?');" CssClass="search-button"/>
+                            OnClientClick="return confirm('Are you sure you want to reject this user?');" CssClass="search-button" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

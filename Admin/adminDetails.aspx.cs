@@ -29,7 +29,7 @@ namespace WAPP_Assignment.Admin
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "SELECT id, profile_pic, username, name, gender, email, country FROM end_user WHERE User_type = 'Admin' AND status = 'Accepted'";
+                string query = "SELECT id, profile_pic, username, name, gender, email, country FROM end_user WHERE user_type = 'Admin' AND status = 'Accepted'";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     try
@@ -55,8 +55,6 @@ namespace WAPP_Assignment.Admin
             int id = Convert.ToInt32(e.CommandArgument);
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-
-
             if (e.CommandName == "Delete")
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
@@ -75,21 +73,19 @@ namespace WAPP_Assignment.Admin
             }
             else if (e.CommandName == "Edit")
             {
-                // Store the current page URL
-                Session["PreviousPage"] = Request.Url.ToString(); 
+                Session["PreviousPage"] = Request.Url.ToString();
                 // Redirect to edit page with user ID as query parameter
                 Response.Redirect("editProfileAdmin.aspx?id=" + id);
             }
         }
 
-        // Search Query
         private void LoadAndBindUsers(string searchQuery = "")
         {
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 // Initial query with the existing WHERE clause
-                string query = "SELECT id, profile_pic, username, name, gender, email, country FROM end_user WHERE User_type = 'Admin' AND status = 'Accepted'";
+                string query = "SELECT id, profile_pic, username, name, gender, email, country FROM end_user WHERE user_type = 'Admin' AND status = 'Accepted'";
 
                 // Use AND instead of WHERE to add search conditions
                 if (!string.IsNullOrEmpty(searchQuery))
@@ -127,7 +123,6 @@ namespace WAPP_Assignment.Admin
             string searchQuery = SearchTextBox.Text.Trim();
             LoadAndBindUsers(searchQuery);
         }
-
 
     }
 }
