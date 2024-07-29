@@ -12,7 +12,9 @@ namespace WAPP_Assignment.Educator
 {
     public partial class comment : System.Web.UI.Page
     {
-         void Page_Load(object sender, EventArgs e)
+        protected bool IsPostAuthor { get; set; }
+
+        protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
@@ -26,6 +28,12 @@ namespace WAPP_Assignment.Educator
                         // Load the post details and comments
                         LoadPostDetails(post_id);
                         LoadComments(post_id);
+                        // Retrieve the post author's username (you'll need to replace this with actual retrieval logic)
+                        string postAuthorUsername = GetPostAuthorUsername(post_id);
+                        string currentUsername = Session["username"]?.ToString();
+
+                        // Check if the current user is the author of the post
+                        IsPostAuthor = string.Equals(postAuthorUsername, currentUsername);
                     }
                 }
             }
@@ -59,6 +67,7 @@ namespace WAPP_Assignment.Educator
                 postImage.ImageUrl = dt.Rows[0][5].ToString();
                 postImage.Visible = true;
             }
+            con.Close();
         }
 
         private void LoadComments(int post_id)
@@ -127,6 +136,64 @@ namespace WAPP_Assignment.Educator
                 string script = $"alert('Comment cannot be left blank.');";
                 ClientScript.RegisterStartupScript(this.GetType(), "ShowErrorMessage", script, true);
             }
+        }
+
+        private string GetPostAuthorUsername(int post_id)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            con.Open();
+
+            SqlDataAdapter da = new SqlDataAdapter("SELECT end_user.username FROM post JOIN end_user ON post.id = end_user.id WHERE post.post_id = '" + post_id + "'", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt.Rows[0][0].ToString();
+        }
+
+        protected void btnRemove_Click(object sender, EventArgs e)
+        {
+            // Logic to remove the post and associated comments
+            int post_id;
+            if (int.TryParse(Request.QueryString["post_id"], out post_id))
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+
+                    // Begin a transaction to ensure both delete operations succeed or fail together
+                    SqlTransaction transaction = con.BeginTransaction();
+
+                    try
+                    {
+                        // Delete comments related to the post
+                        string deleteCommentsQuery = "DELETE FROM comment WHERE post_id = @post_id";
+                        SqlCommand deleteCommentsCmd = new SqlCommand(deleteCommentsQuery, con, transaction);
+                        deleteCommentsCmd.Parameters.AddWithValue("@post_id", post_id);
+                        deleteCommentsCmd.ExecuteNonQuery();
+
+                        // Delete the post itself
+                        string deletePostQuery = "DELETE FROM post WHERE post_id = @post_id";
+                        SqlCommand deletePostCmd = new SqlCommand(deletePostQuery, con, transaction);
+                        deletePostCmd.Parameters.AddWithValue("@post_id", post_id);
+                        deletePostCmd.ExecuteNonQuery();
+
+                        // Commit the transaction
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Rollback the transaction if an error occurs
+                        transaction.Rollback();
+                        // Optionally, log the exception or display an error message
+                        string script = $"alert('Error deleting post: {ex.Message}');";
+                        ClientScript.RegisterStartupScript(this.GetType(), "ShowErrorMessage", script, true);
+                    }
+                }
+            }
+
+            // Redirect back to the same page or another page after deletion
+            Response.Redirect("forum.aspx");
         }
     }
 }
