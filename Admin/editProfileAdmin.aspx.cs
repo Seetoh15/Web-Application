@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WAPP_Assignment.Admin
 {
@@ -20,23 +15,23 @@ namespace WAPP_Assignment.Admin
                 Response.Redirect("~/guest/login.aspx");
             }
 
-            
 
-                if (!Page.IsPostBack)
+
+            if (!Page.IsPostBack)
+            {
+                // Retrieve user ID from query string
+                string userId = Request.QueryString["id"];
+
+                if (!string.IsNullOrEmpty(userId))
                 {
-                    // Retrieve user ID from query string
-                    string userId = Request.QueryString["id"];
-
-                    if (!string.IsNullOrEmpty(userId))
-                    {
-                        LoadUserDetails(userId);
-                    }
-                    else
-                    {
-                        // Handle the case where no user ID is provided
-                        Response.Write("Invalid user ID.");
-                    }
+                    LoadUserDetails(userId);
                 }
+                else
+                {
+                    // Handle the case where no user ID is provided
+                    Response.Write("Invalid user ID.");
+                }
+            }
         }
 
         private void LoadUserDetails(string userId)
@@ -58,7 +53,7 @@ namespace WAPP_Assignment.Admin
                     email.Text = reader["email"].ToString();
                     country.Text = reader["country"].ToString();
                     gender.SelectedValue = reader["gender"].ToString();
-                    user_type.SelectedValue = reader["user_type"].ToString();
+                    user_type.Text = reader["user_type"].ToString();
                     password.Text = reader["password"].ToString();
                     profile_pic.ImageUrl = reader["profile_pic"].ToString();
                     img.Text = reader["profile_pic"].ToString();

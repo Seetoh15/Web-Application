@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/template.Master" AutoEventWireup="true" CodeBehind="editProfileAdmin.aspx.cs" Inherits="WAPP_Assignment.Admin.editProfileAdmin" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="editProfileAdmin.css" rel="stylesheet" />
     <title>Edit User Profile</title>
@@ -18,7 +19,7 @@
             <asp:Label ID="Label3" runat="server" Text="Username:"></asp:Label>
             <asp:TextBox ID="username" runat="server" CssClass="form-control" ReadOnly="True"></asp:TextBox>
         </div>
-    
+
         <div class="form-group">
             <asp:Label ID="Label4" runat="server" Text="Email:"></asp:Label>
             <asp:TextBox ID="email" runat="server" CssClass="form-control"></asp:TextBox>
@@ -42,12 +43,9 @@
 
         <div class="form-group">
             <asp:Label ID="Label7" runat="server" Text="Role:"></asp:Label>
-            <asp:DropDownList ID="user_type" runat="server" CssClass="form-control" AutoPostBack="True" Enabled="False">
-                <asp:ListItem Value="Educator">Educator</asp:ListItem>
-                <asp:ListItem Value="Member">Member</asp:ListItem>
-                <asp:ListItem Value="Admin">Admin</asp:ListItem>
-            </asp:DropDownList>
+            <asp:TextBox ID="user_type" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
         </div>
+
 
         <div class="form-group">
             <asp:Label ID="Label8" runat="server" Text="Password:"></asp:Label>
@@ -56,10 +54,10 @@
         </div>
 
         <div class="form-group">
-             <asp:Label ID="Label11" runat="server" Text="Profile Picture:"></asp:Label>
-             <asp:Label ID="img" runat="server" Text="Profile picture"></asp:Label>
-               <asp:FileUpload ID="FileUpload1" runat="server" />
-             <br />
+            <asp:Label ID="Label11" runat="server" Text="Profile Picture:"></asp:Label>
+            <asp:Label ID="img" runat="server" Text="Profile picture"></asp:Label>
+            <asp:FileUpload ID="FileUpload1" runat="server" />
+            <br />
         </div>
 
         <asp:Image ID="profile_pic" runat="server" Height="240px" Width="289px" />
