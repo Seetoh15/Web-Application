@@ -44,7 +44,7 @@
             <asp:TextBox ID="email" runat="server" CssClass="form-control"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="email"  ErrorMessage="Email is required!" Display="Dynamic" CssClass="error-message"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="email" 
-                ErrorMessage="Invalid email format!" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
+                ErrorMessage="Invalid email format! For example: xxx@gmail.com" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
                 Display="Dynamic" CssClass="error-message"></asp:RegularExpressionValidator>
         </div>
 
@@ -78,7 +78,10 @@
             <asp:Label ID="Label8" runat="server" Text="Password:"></asp:Label>
             <asp:TextBox ID="password" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="password" ErrorMessage="Password is required!" Display="Dynamic" CssClass="error-message"></asp:RequiredFieldValidator>
-        </div>
+            <asp:RegularExpressionValidator ID="revPasswordLength" runat="server" ControlToValidate="password"
+                ValidationExpression=".{4,}" ErrorMessage="Password must be at least 4 characters." Display="Dynamic"  CssClass="error-message">                       
+    </asp:RegularExpressionValidator>
+</div>
 
         <asp:Label ID="ErrorMsg" runat="server" CssClass="error-message"></asp:Label>
         <asp:Label ID="SuccessMsg" runat="server" CssClass="success-message" Visible="False"></asp:Label> 
@@ -90,8 +93,10 @@
         <div class="signup-link">
             <asp:Label ID="Label10" runat="server" Text="Already have an account?"></asp:Label>
             &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CssClass="signup-button" OnClick="LinkButton2_Click"  CausesValidation="false">Log In</asp:LinkButton>
-        &nbsp;</div>
-    </div>
+        &nbsp;
+
+        </div>
+   
 </asp:Content>
 
 
