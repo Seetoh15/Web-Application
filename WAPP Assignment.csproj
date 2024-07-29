@@ -116,7 +116,6 @@
     <Content Include="Admin\generateReportAdmin.css" />
     <Content Include="Admin\homePage.aspx" />
     <Content Include="Admin\homePage.css" />
-    <Content Include="Admin\homePage.js" />
     <Content Include="Admin\memberDetails.aspx" />
     <Content Include="Admin\template.css" />
     <Content Include="App_Data\Database.mdf" />

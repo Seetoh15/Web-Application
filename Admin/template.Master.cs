@@ -11,7 +11,20 @@ namespace WAPP_Assignment.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                // Assuming you have the username stored in a session variable
+                string username = Session["username"] as string;
 
+                if (!string.IsNullOrEmpty(username))
+                {
+                    lblWelcomeMessage.Text = $"Welcome, {username}";
+                }
+                else
+                {
+                    lblWelcomeMessage.Text = "Welcome, Admin";
+                }
+            }
         }
     }
 }

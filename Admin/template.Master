@@ -23,12 +23,14 @@
                     <li><a href="educatorDetails.aspx" class="links">Educator</a></li>
                     <li><a href="memberDetails.aspx" class="links">Member</a></li>
                     <li><a href="#" class="links">Forums</a></li>
-                    <li><a href="#" class="links">Courses</a></li>
+                    
                     
                 </ul>
             </nav>
-            <div id="pic_container">
+            <div id="pic_container"> 
+                <asp:Label ID="lblWelcomeMessage" runat="server" CssClass="welcome-message" />
                    <img class="pic" src="../image/pp.png" alt="Profile Picture" />
+                   
             </div>
         </header>
         <div id="content">

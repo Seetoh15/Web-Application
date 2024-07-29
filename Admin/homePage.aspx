@@ -5,13 +5,14 @@
     <link rel="stylesheet" href="allUserDetails.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container1">
         <h2>Dashboard</h2>
         <asp:LinkButton ID="btnGenerateReport" runat="server" CssClass="button" OnClick="btnGenerateReport_Click">
-    <i class="fas fa-download fa-sm"></i>Generate Report
+    <i class="fas fa-download fa-sm"></i>Show Report
         </asp:LinkButton>
     </div>
     <!-- Earnings (Monthly) Card Example -->
@@ -75,16 +76,7 @@
         </div>
     </div>
 
-
-    <div class="charts">
-        <asp:ScriptManager runat="server" EnablePageMethods="true"></asp:ScriptManager>
-        <div class="charts-card">
-            <p class="chart-title">Total Users</p>
-            <div id="bar-chart"></div>
-        </div>
-
-    </div>
-
+    <h2>Pending Admin/Educator user</h2>
     <div class="header_fixed thead th small-table-container">
         <asp:GridView ID="PendingUsersGridView" runat="server" AutoGenerateColumns="False" OnRowCommand="PendingUsersGridView_RowCommand" EmptyDataText="No pending users found.">
             <Columns>
@@ -106,17 +98,6 @@
         </asp:GridView>
     </div>
 
-
-
-
-    <!-- FontAwesome script and Charts-->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.50.0/apexcharts.min.js"></script>
-
-
-
-    <!-- Custom JS -->
-    <script src="homePage.js"></script>
 
 </asp:Content>
 
