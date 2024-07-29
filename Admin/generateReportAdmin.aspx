@@ -44,7 +44,7 @@
 
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server"
                     ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-                    SelectCommand="SELECT user_type, COUNT(id) AS UserCount FROM [end_user] WHERE user_type IN ('Educator', 'Member', 'Admin') GROUP BY user_type">
+                    SelectCommand="SELECT user_type, COUNT(id) AS UserCount FROM [end_user] WHERE user_type IN ('Educator', 'Member', 'Admin') AND status = 'Accepted' GROUP BY user_type">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="Educator" Name="user_type" Type="String" />
                         <asp:Parameter DefaultValue="Member" Name="user_type2" Type="String" />
@@ -52,7 +52,28 @@
                     </SelectParameters>
                 </asp:SqlDataSource>
 
+                <h2>Graph of total comments </h2>
+                <asp:Chart ID="Chart2" runat="server" DataSourceID="SqlDataSource2" Height="500px" Width="500px">
+                    <Series>
+                        <asp:Series ChartType="Line" Name="Series1" XValueMember="created_at" YValueMembers="comment_id">
+                        </asp:Series>
+                    </Series>
+                    <ChartAreas>
+                        <asp:ChartArea Name="ChartArea1">
+                        </asp:ChartArea>
+                    </ChartAreas>
+                </asp:Chart>
+
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server"
+                    ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+                    SelectCommand="SELECT * FROM [comment]"></asp:SqlDataSource>
+
+                <br />
+                <br />
+                <br />
+
             </div>
+            <h5><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Return to home page</asp:LinkButton></h5>
         </div>
     </div>
 </asp:Content>

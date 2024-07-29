@@ -27,6 +27,11 @@ h2 {
     color: #333;
 }
 
+h5 {
+    text-align: center;
+    color: #333;
+}
+
 .report-info {
     margin-top: 20px;
 }
