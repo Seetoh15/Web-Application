@@ -1,12 +1,22 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Educator/template.Master" AutoEventWireup="true" CodeBehind="comment.aspx.cs" Inherits="WAPP_Assignment.Educator.comment" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="comment.css" />
+    <script>
+        function confirmPostDeletion() {
+            return confirm("Are you sure you want to delete this post?");
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="width:100%; height:100%; display:flex; flex-direction:column; align-items:center; gap:20px; padding-top:20px;">
         <div style="width:70%; height:100%; display:flex; flex-direction:column;">
             <div style="height:150px; display:flex; flex-direction:row;">
                 <div style="display:flex; flex-direction:column; width:100%;">
+                    <div style="text-align:right; margin-bottom:10px;">
+                        <% if (IsPostAuthor) { %>
+                            <asp:Button ID="btnRemove" CssClass="btnRemove" runat="server" Text="Remove Post" OnClick="btnRemove_Click" OnClientClick="return confirmPostDeletion();" />
+                        <% } %>
+                    </div>
                     <div style="box-shadow:0 4px 8px rgba(0, 0, 0, 0.1); padding:10px; background:white; border-radius:10px;">
                         <div style="display:flex; flex-direction:row; margin-top:10px; width:100%;">
                             <asp:Image ID="imgProfilePic" CssClass="profile-pic" runat="server" AlternateText="Profile Picture" />

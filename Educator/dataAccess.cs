@@ -16,7 +16,7 @@ namespace WAPP_Assignment.Educator
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT post.post_id, post.title, post.content, post.created_at, end_user.username, end_user.profile_pic, COUNT(comment.comment_id) AS comment_count FROM post JOIN end_user ON post.id = end_user.id LEFT JOIN comment ON post.post_id = comment.post_id GROUP BY post.post_id, post.title, post.content, post.created_at, end_user.username, end_user.profile_pic ORDER BY post.post_id", connection);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT post.post_id, post.title, post.content, post.created_at, end_user.username, end_user.profile_pic, COUNT(comment.comment_id) AS comment_count FROM post JOIN end_user ON post.id = end_user.id LEFT JOIN comment ON post.post_id = comment.post_id GROUP BY post.post_id, post.title, post.content, post.created_at, end_user.username, end_user.profile_pic ORDER BY post.created_at DESC", connection);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
                 return dataTable;
@@ -27,7 +27,7 @@ namespace WAPP_Assignment.Educator
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT post.post_id, post.title, post.content, post.created_at, end_user.username, end_user.profile_pic, COUNT(comment.comment_id) AS comment_count FROM post JOIN end_user ON post.id = end_user.id LEFT JOIN comment ON post.post_id = comment.post_id WHERE post.title LIKE '" + search_term + "' GROUP BY post.post_id, post.title, post.content, post.created_at, end_user.username, end_user.profile_pic ORDER BY post.post_id", connection);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT post.post_id, post.title, post.content, post.created_at, end_user.username, end_user.profile_pic, COUNT(comment.comment_id) AS comment_count FROM post JOIN end_user ON post.id = end_user.id LEFT JOIN comment ON post.post_id = comment.post_id WHERE post.title LIKE '" + search_term + "' GROUP BY post.post_id, post.title, post.content, post.created_at, end_user.username, end_user.profile_pic ORDER BY post.created_at DESC", connection);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
                 return dataTable;

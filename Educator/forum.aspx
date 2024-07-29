@@ -24,7 +24,7 @@
                     <a href="comment.aspx?post_id=<%# Eval("post_id") %>">
                         <div style="height:150px; display:flex; flex-direction:row; box-shadow:0 4px 8px rgba(0, 0, 0, 0.1); padding:10px; background:white; border-radius:10px;">
                             <div style="display:flex; flex-direction:column; width:75%;">
-                                <div style="display:flex; flex-direction:row; margin-top:10px; width:100%;">
+                                <div style="display:flex; flex-direction:row; width:100%;">
                                     <img src="<%# GetProfilePicUrl(Eval("profile_pic")) %>" alt="Profile picture" />
                                     <div style="display:flex; flex-direction:column; margin-left:10px; width:100%;">
                                         <div style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
