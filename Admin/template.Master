@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
         <header>
             <div id="logo_container">
-                <a href="homePage.aspx" style="width:70px; height:70px;">
+                <a href="homePage.aspx" style="width: 70px; height: 70px;">
                     <img class="logo" src="../image/logo.png" alt="logo" />
                 </a>
             </div>
@@ -23,14 +23,18 @@
                     <li><a href="educatorDetails.aspx" class="links">Educator</a></li>
                     <li><a href="memberDetails.aspx" class="links">Member</a></li>
                     <li><a href="forumAdmin.aspx" class="links">Forums</a></li>
-                    
-                    
+
+
                 </ul>
             </nav>
-            <div id="pic_container"> 
+            <div id="pic_container">
                 <asp:Label ID="lblWelcomeMessage" runat="server" CssClass="welcome-message" />
-                   <img class="pic" src="../image/pp.png" alt="Profile Picture" />
-                   
+
+            </div>
+            <div id="btnLogoutContainer">
+                <div class="logout">
+                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btnLogout" OnClick="LinkButton1_Click" OnClientClick="return confirmLogout();">Logout</asp:LinkButton>
+                </div>
             </div>
         </header>
         <div id="content">

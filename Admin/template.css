@@ -98,3 +98,10 @@ nav {
     margin-left: 30px;
     font-family: 'Montserrat', sans-serif;
 }
+
+.logout {
+    padding: 0px 20px 0px 0px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
