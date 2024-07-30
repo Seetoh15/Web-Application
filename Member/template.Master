@@ -19,9 +19,10 @@
             </div>
             <nav>
                 <ul class="nav_links">
-                    <li><a href="#" class="links">Edit Profile</a></li>
-                    <li><a href="#" class="links">Post Forum</a></li>
-                    <li><a href="#" class="links">Sign out</a></li>
+                    <li><a href="editProfile.aspx" class="links">Edit Profile</a></li>
+                    <li><a href="courseSelection.aspx" class="links">Courses</a></li>
+                    <li><a href="forumpage.aspx" class="links">Post Forum</a></li>
+                    <li><a href="/Guest/login.aspx" class="links">Sign out</a></li>
                 </ul>
             </nav>
             <div id="pic_container">

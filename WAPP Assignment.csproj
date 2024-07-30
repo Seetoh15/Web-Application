@@ -187,16 +187,24 @@
     <Content Include="Member\course.css" />
     <Content Include="Member\course.js" />
     <Content Include="Member\courseSelection.aspx" />
+    <Content Include="Member\editProfile.aspx" />
+    <Content Include="Member\editProfile.css" />
     <Content Include="Member\english.aspx" />
     <Content Include="Member\english.css" />
     <Content Include="Member\englishQuiz.aspx" />
     <Content Include="Member\engQuiz.css" />
     <Content Include="Member\engQuiz.js" />
+    <Content Include="Member\forumpage.aspx" />
+    <Content Include="Member\forumpage.css" />
+    <Content Include="Member\forumpage.js" />
     <Content Include="Member\math.aspx" />
     <Content Include="Member\math.css" />
     <Content Include="Member\mathQuiz.aspx" />
     <Content Include="Member\mathQuiz.css" />
     <Content Include="Member\mathQuiz.js" />
+    <Content Include="Member\postForum.aspx" />
+    <Content Include="Member\postForum.css" />
+    <Content Include="Member\postForum.js" />
     <Content Include="Member\template.css" />
     <Content Include="template.css" />
     <Content Include="Guest\template.Master" />
@@ -449,6 +457,14 @@
     <Compile Include="Member\courseSelection.aspx.designer.cs">
       <DependentUpon>courseSelection.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Member\dataAccess.cs" />
+    <Compile Include="Member\editProfile.aspx.cs">
+      <DependentUpon>editProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\editProfile.aspx.designer.cs">
+      <DependentUpon>editProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Member\english.aspx.cs">
       <DependentUpon>english.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -463,6 +479,13 @@
     <Compile Include="Member\englishQuiz.aspx.designer.cs">
       <DependentUpon>englishQuiz.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Member\forumpage.aspx.cs">
+      <DependentUpon>forumpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\forumpage.aspx.designer.cs">
+      <DependentUpon>forumpage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Member\math.aspx.cs">
       <DependentUpon>math.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -476,6 +499,13 @@
     </Compile>
     <Compile Include="Member\mathQuiz.aspx.designer.cs">
       <DependentUpon>mathQuiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\postForum.aspx.cs">
+      <DependentUpon>postForum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\postForum.aspx.designer.cs">
+      <DependentUpon>postForum.aspx</DependentUpon>
     </Compile>
     <Compile Include="Member\template.Master.cs">
       <DependentUpon>template.Master</DependentUpon>
