@@ -109,9 +109,14 @@
     <Content Include="About.aspx" />
     <Content Include="Admin\adminDetails.aspx" />
     <Content Include="Admin\allUserDetails.css" />
+    <Content Include="Admin\commentAdmin.aspx" />
+    <Content Include="Admin\commentAdmin.css" />
     <Content Include="Admin\editProfileAdmin.aspx" />
     <Content Include="Admin\editProfileAdmin.css" />
     <Content Include="Admin\educatorDetails.aspx" />
+    <Content Include="Admin\forumAdmin.aspx" />
+    <Content Include="Admin\forumAdmin.css" />
+    <Content Include="Admin\forumAdmin.js" />
     <Content Include="Admin\generateReportAdmin.aspx" />
     <Content Include="Admin\generateReportAdmin.css" />
     <Content Include="Admin\homePage.aspx" />
@@ -242,6 +247,13 @@
     <Compile Include="Admin\adminDetails.aspx.designer.cs">
       <DependentUpon>adminDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\commentAdmin.aspx.cs">
+      <DependentUpon>commentAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\commentAdmin.aspx.designer.cs">
+      <DependentUpon>commentAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\editProfileAdmin.aspx.cs">
       <DependentUpon>editProfileAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -255,6 +267,13 @@
     </Compile>
     <Compile Include="Admin\educatorDetails.aspx.designer.cs">
       <DependentUpon>educatorDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\forumAdmin.aspx.cs">
+      <DependentUpon>forumAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\forumAdmin.aspx.designer.cs">
+      <DependentUpon>forumAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\generateReportAdmin.aspx.cs">
       <DependentUpon>generateReportAdmin.aspx</DependentUpon>
