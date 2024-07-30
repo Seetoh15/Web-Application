@@ -30,5 +30,13 @@ namespace WAPP_Assignment.Educator
                 profile_pic.ImageUrl = dt.Rows[0][0].ToString();
             }
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Request.Cookies.Clear();
+
+            Response.Redirect("../Guest/login.aspx");
+        }
     }
 }

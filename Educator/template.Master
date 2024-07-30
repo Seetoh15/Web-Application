@@ -6,6 +6,11 @@
 <head runat="server">
     <title></title>
     <link rel="stylesheet" href="template.css" />
+    <script>
+        function confirmLogout() {
+            return confirm("Are you sure you want to logout?");
+        }
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -19,13 +24,16 @@
             </div>
             <nav>
                 <ul class="nav_links">
-                    <li><a href="#" class="links">Page 1</a></li>
-                    <li><a href="#" class="links">Page 2</a></li>
-                    <li><a href="#" class="links">Page 3</a></li>
+                    <li><a href="#" class="links">Course</a></li>
+                    <li><a href="forum.aspx" class="links">Forum</a></li>
+                    <li><a href="editProfile.aspx" class="links">Profile</a></li>
                 </ul>
             </nav>
             <div id="pic_container">
                 <asp:Image ID="profile_pic" runat="server" CssClass="pic" AlternateText="Profile Picture" />
+            </div>
+            <div id="btnLogoutContainer">
+                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btnLogout" OnClick="LinkButton1_Click" OnClientClick="return confirmLogout();">Logout</asp:LinkButton>
             </div>
         </header>
         <div id="content">
