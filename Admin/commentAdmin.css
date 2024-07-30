@@ -1,0 +1,74 @@
+﻿
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+b {
+    font-size: 23px;
+}
+
+hr {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.search {
+    --padding: 14px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    border-radius: 28px;
+    background: #f6f6f6;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+    transition: box-shadow 0.25s;
+}
+
+.search-input {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+    margin-left: var(--padding);
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 100%;
+}
+
+    .search-input::placeholder,
+    .search-icon {
+        color: rgba(0, 0, 0, 0.25);
+    }
+
+.button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 14px 20px; /* Adjust as needed for desired size */
+    display: inline-block;
+    text-align: center;
+}
+
+.btnRemove {
+    background: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    padding: 10px; /* Adjust as needed for desired size */
+    display: inline-block;
+    text-align: center;
+}
