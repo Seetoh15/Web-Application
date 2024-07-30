@@ -133,6 +133,8 @@
     <Content Include="Educator\comment.aspx" />
     <Content Include="Educator\comment.css" />
     <Content Include="Educator\course.aspx" />
+    <Content Include="Educator\editProfile.aspx" />
+    <Content Include="Educator\editProfile.css" />
     <Content Include="Educator\editQuiz.aspx" />
     <Content Include="Educator\forum.aspx" />
     <Content Include="Educator\forum.css" />
@@ -327,6 +329,13 @@
       <DependentUpon>course.aspx</DependentUpon>
     </Compile>
     <Compile Include="Educator\dataAccess.cs" />
+    <Compile Include="Educator\editProfile.aspx.cs">
+      <DependentUpon>editProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Educator\editProfile.aspx.designer.cs">
+      <DependentUpon>editProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Educator\editQuiz.aspx.cs">
       <DependentUpon>editQuiz.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
