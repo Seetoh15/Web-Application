@@ -18,45 +18,70 @@ namespace WAPP_Assignment.Guest
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            try
             {
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("Select count(*) from end_user where username = '" +
-                    username.Text + "' and Password = '" + pwd.Text + " ' ", con);
+                // Check if user exists with matching username and password
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM end_user WHERE username = @username AND password = @password", con);
+                cmd.Parameters.AddWithValue("@username", username.Text);
+                cmd.Parameters.AddWithValue("@password", pwd.Text);
+
                 int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
 
                 if (count > 0)
                 {
-                    SqlCommand cmdType = new SqlCommand("select name, user_type from end_user where username = '" + username.Text + " ' ", con);
+                    // Retrieve user details
+                    SqlCommand cmdType = new SqlCommand("SELECT name, user_type, status FROM end_user WHERE username = @username", con);
+                    cmdType.Parameters.AddWithValue("@username", username.Text);
 
                     SqlDataReader dr = cmdType.ExecuteReader();
 
-                    String user_type = " ";
-                    String name = " ";
+                    string user_type = string.Empty;
+                    string name = string.Empty;
+                    string status = string.Empty;
 
                     while (dr.Read())
                     {
                         user_type = dr["user_type"].ToString().Trim();
                         name = dr["name"].ToString().Trim();
+                        status = dr["status"].ToString().Trim();
                     }
+
+                    if (status == "Pending")
+                    {
+                        errorMsg.Visible = true;
+                        errorMsg.ForeColor = System.Drawing.Color.Red;
+                        errorMsg.Text = "Your account is pending approval.";
+                        return;
+                    }
+
                     Session["username"] = username.Text;
 
+                    // Redirect based on user type
                     if (user_type == "Admin")
                         Response.Redirect("/Admin/homePage.aspx");
                     else if (user_type == "Member")
                         Response.Redirect("/Member/courseSelection.aspx");
                     else if (user_type == "Educator")
                         Response.Redirect("/Educator/forum.aspx");
-
                 }
                 else
                 {
                     errorMsg.Visible = true;
                     errorMsg.ForeColor = System.Drawing.Color.Red;
                     errorMsg.Text = "Username and Password mismatch!";
-                    return;
                 }
+            }
+            catch (Exception ex)
+            {
+                errorMsg.Visible = true;
+                errorMsg.ForeColor = System.Drawing.Color.Red;
+                errorMsg.Text = "Error during login: " + ex.Message;
+            }
+            finally
+            {
                 con.Close();
             }
         }
@@ -66,5 +91,8 @@ namespace WAPP_Assignment.Guest
             Response.Redirect("signIn.aspx");
         }
     }
-
 }
+
+
+
+
