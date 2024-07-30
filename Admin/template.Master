@@ -22,7 +22,7 @@
                     <li><a href="adminDetails.aspx" class="links">Admin</a></li>
                     <li><a href="educatorDetails.aspx" class="links">Educator</a></li>
                     <li><a href="memberDetails.aspx" class="links">Member</a></li>
-                    <li><a href="#" class="links">Forums</a></li>
+                    <li><a href="forumAdmin.aspx" class="links">Forums</a></li>
                     
                     
                 </ul>

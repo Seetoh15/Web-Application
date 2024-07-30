@@ -108,14 +108,17 @@ namespace WAPP_Assignment.Admin
                     cmd.Parameters.AddWithValue("@id", userId);
 
                     cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    ErrorMsg.Visible = false;
+                    SuccessMsg.Visible = true;
+                    SuccessMsg.ForeColor = System.Drawing.Color.Green;
+                    SuccessMsg.Text = "Edit profile successful!";
 
                 }
 
             }
-            if (Session["PreviousPage"] != null)
-            {
-                Response.Redirect("editProfileAdmin.aspx?id=" + userId); // Refresh the page to reflect changes
-            }
+
 
         }
 
