@@ -27,18 +27,55 @@ namespace WAPP_Assignment.Educator
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT post.post_id, post.title, post.content, post.created_at, end_user.username, end_user.profile_pic, COUNT(comment.comment_id) AS comment_count FROM post JOIN end_user ON post.id = end_user.id LEFT JOIN comment ON post.post_id = comment.post_id WHERE post.title LIKE '" + search_term + "' GROUP BY post.post_id, post.title, post.content, post.created_at, end_user.username, end_user.profile_pic ORDER BY post.created_at DESC", connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                return dataTable;
+                // Define the SQL query with a parameter placeholder
+                string query = "SELECT post.post_id, post.title, post.content, post.created_at, end_user.username, end_user.profile_pic, COUNT(comment.comment_id) AS comment_count " +
+                               "FROM post " +
+                               "JOIN end_user ON post.id = end_user.id " +
+                               "LEFT JOIN comment ON post.post_id = comment.post_id " +
+                               "WHERE post.title LIKE '%' + @search_term + '%' " +
+                               "GROUP BY post.post_id, post.title, post.content, post.created_at, end_user.username, end_user.profile_pic " +
+                               "ORDER BY post.created_at DESC";
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                {
+                    // Set the parameter value with wildcards for partial matching
+                    adapter.SelectCommand.Parameters.AddWithValue("@search_term", search_term);
+
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
             }
         }
+
 
         public DataTable GetComment(int post_id)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT comment.content, comment.created_at, end_user.username, end_user.profile_pic FROM comment INNER JOIN end_user ON comment.id = end_user.id WHERE comment.post_id = '" + post_id + "' ORDER BY comment.created_at DESC", connection);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+        }
+
+        public DataTable GetChapter(int course_id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM chapter WHERE course_id = '" + course_id + "'", connection);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+        }
+
+        public DataTable GetQuiz(int course_id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM quiz WHERE course_id = '" + course_id + "'", connection);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
                 return dataTable;

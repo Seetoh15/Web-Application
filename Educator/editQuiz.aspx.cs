@@ -22,8 +22,7 @@ namespace WAPP_Assignment.Educator
 
         private void LoadQuizDetails()
         {
-            //int quizId = int.Parse(Request.QueryString["quizId"]);
-            int quiz_id = 1;
+            int quiz_id = int.Parse(Request.QueryString["quiz_id"]);
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -38,7 +37,6 @@ namespace WAPP_Assignment.Educator
                 if (readerQuiz.Read())
                 {
                     QuizTitle.Text = readerQuiz["Title"].ToString();
-                    QuizDescription.Text = readerQuiz["Description"].ToString();
                 }
                 readerQuiz.Close();
 
@@ -79,18 +77,17 @@ namespace WAPP_Assignment.Educator
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
-            int quizId = int.Parse(Request.QueryString["quizId"]);
+            int quiz_id = int.Parse(Request.QueryString["quiz_id"]);
             string title = QuizTitle.Text.Trim();
-            string description = QuizDescription.Text.Trim();
             var questionTexts = Request.Form.GetValues("questionText");
             var choiceTexts = Request.Form.GetValues("choiceText");
             var isCorrectValues = Request.Form.GetValues("isCorrect");
             var deletedQuestions = Request.Form.GetValues("deletedQuestions");
             var deletedChoices = Request.Form.GetValues("deletedChoices");
 
-            if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(description) || questionTexts == null || questionTexts.Length == 0)
+            if (string.IsNullOrEmpty(title) || questionTexts == null || questionTexts.Length == 0)
             {
-                ShowErrorMessage("Title, Description, and at least one Question are required.");
+                ShowErrorMessage("Title and at least one Question are required.");
                 return;
             }
 
@@ -100,11 +97,10 @@ namespace WAPP_Assignment.Educator
                 con.Open();
 
                 // Update quiz
-                string updateQuizQuery = "UPDATE Quiz SET Title = @Title, Description = @Description WHERE QuizId = @QuizId";
+                string updateQuizQuery = "UPDATE Quiz SET Title = @Title WHERE QuizId = @QuizId";
                 SqlCommand cmdQuiz = new SqlCommand(updateQuizQuery, con);
                 cmdQuiz.Parameters.AddWithValue("@Title", title);
-                cmdQuiz.Parameters.AddWithValue("@Description", description);
-                cmdQuiz.Parameters.AddWithValue("@QuizId", quizId);
+                cmdQuiz.Parameters.AddWithValue("@QuizId", quiz_id);
                 cmdQuiz.ExecuteNonQuery();
 
                 // Delete questions
@@ -175,7 +171,7 @@ namespace WAPP_Assignment.Educator
                         string insertQuestionQuery = "INSERT INTO Question (QuestionText, QuizId) VALUES (@QuestionText, @QuizId); SELECT SCOPE_IDENTITY();";
                         SqlCommand cmdNewQuestion = new SqlCommand(insertQuestionQuery, con);
                         cmdNewQuestion.Parameters.AddWithValue("@QuestionText", newQuestionTexts[i]);
-                        cmdNewQuestion.Parameters.AddWithValue("@QuizId", quizId);
+                        cmdNewQuestion.Parameters.AddWithValue("@QuizId", quiz_id);
                         int newQuestionId = Convert.ToInt32(cmdNewQuestion.ExecuteScalar());
 
                         for (int j = 0; j < 4; j++)
@@ -199,5 +195,90 @@ namespace WAPP_Assignment.Educator
             string script = $"alert('{message.Replace("'", "\\'").Replace("\n", "\\n").Replace("\r", "\\r")}');";
             ClientScript.RegisterStartupScript(this.GetType(), "ShowErrorMessage", script, true);
         }
-    }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (txtQuestion.Text.Trim() != "" & TextBox1.Text.Trim() != "" & TextBox2.Text.Trim() != "" & TextBox3.Text.Trim() != "" & TextBox4.Text.Trim() != "")
+            {
+                int quiz_id = int.Parse(Request.QueryString["quiz_id"]);
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                con.Open();
+
+                // Insert record into the question table and retrieve the inserted question_id
+                string query1 = "INSERT INTO question (question_text, quiz_id) VALUES (@question_text, @quiz_id); SELECT SCOPE_IDENTITY();";
+                SqlCommand cmd1 = new SqlCommand(query1, con);
+
+                cmd1.Parameters.AddWithValue("@question_text", txtQuestion.Text);
+                cmd1.Parameters.AddWithValue("@quiz_id", quiz_id);
+
+                // Execute the command and retrieve the newly generated question_id
+                object result = cmd1.ExecuteScalar();
+                int question_id = Convert.ToInt32(result);
+
+                // Prepare query for inserting choices
+                string query2 = "INSERT INTO choice (choice_text, is_correct, question_id) VALUES (@choice_text, @is_correct, @question_id)";
+
+                // Insert each choice with its is_correct value
+                InsertChoice(con, query2, TextBox1.Text, RadioButton1.Checked ? 1 : 0, question_id);
+                InsertChoice(con, query2, TextBox2.Text, RadioButton2.Checked ? 1 : 0, question_id);
+                InsertChoice(con, query2, TextBox3.Text, RadioButton3.Checked ? 1 : 0, question_id);
+                InsertChoice(con, query2, TextBox4.Text, RadioButton4.Checked ? 1 : 0, question_id);
+
+                con.Close();
+
+                Response.Redirect("editQuiz.aspx?quiz_id=" + quiz_id);
+            }
+            else
+            {
+                string script = $"alert('Please fill up the question title and all 4 choices.');";
+                ClientScript.RegisterStartupScript(this.GetType(), "ShowErrorMessage", script, true);
+            }
+        }
+
+        // Method to insert a choice
+        void InsertChoice(SqlConnection connection, string query, string choiceText, int isCorrect, int questionId)
+        {
+            using (SqlCommand cmd = new SqlCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@choice_text", choiceText);
+                cmd.Parameters.AddWithValue("@is_correct", isCorrect);
+                cmd.Parameters.AddWithValue("@question_id", questionId);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            int quiz_id = 0;
+            if (QuizTitle.Text.Trim() != "")
+            {
+                // Check if the question_id is available in the query string to determine if editing
+                if (int.TryParse(Request.QueryString["quiz_id"], out quiz_id))
+                {
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                    con.Open();
+
+                    SqlDataAdapter da = new SqlDataAdapter("select course_id from quiz where quiz_id = '" + quiz_id + "'", con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    int course_id = Convert.ToInt32(dt.Rows[0][0]);
+
+                    // Update the existing question
+                    string queryUpdateQuiz = "UPDATE quiz SET title = @title WHERE quiz_id = '" + quiz_id + "'";
+                    SqlCommand cmdUpdateQuiz = new SqlCommand(queryUpdateQuiz, con);
+                    cmdUpdateQuiz.Parameters.AddWithValue("@title", QuizTitle.Text);
+                    cmdUpdateQuiz.ExecuteNonQuery();
+                    con.Close();
+
+                    Response.Redirect("courseContent.aspx?course_id=" + course_id);
+                }
+            }
+            else
+            {
+                string script = $"alert('Quiz title cannot be empty!');";
+                ClientScript.RegisterStartupScript(this.GetType(), "ShowErrorMessage", script, true);
+            }
+        }
+    }   
 }

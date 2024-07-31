@@ -80,8 +80,8 @@
             <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="password" ErrorMessage="Password is required!" Display="Dynamic" CssClass="error-message"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="revPasswordLength" runat="server" ControlToValidate="password"
                 ValidationExpression=".{4,}" ErrorMessage="Password must be at least 4 characters." Display="Dynamic"  CssClass="error-message">                       
-    </asp:RegularExpressionValidator>
-</div>
+            </asp:RegularExpressionValidator>
+        </div>
 
         <asp:Label ID="ErrorMsg" runat="server" CssClass="error-message"></asp:Label>
         <asp:Label ID="SuccessMsg" runat="server" CssClass="success-message" Visible="False"></asp:Label> 
@@ -96,7 +96,7 @@
         &nbsp;
 
         </div>
-   
+    </div>
 </asp:Content>
 
 

@@ -65,7 +65,7 @@ namespace WAPP_Assignment.Guest
                     else if (user_type == "Member")
                         Response.Redirect("/Member/courseSelection.aspx");
                     else if (user_type == "Educator")
-                        Response.Redirect("/Educator/forum.aspx");
+                        Response.Redirect("/Educator/course.aspx");
                 }
                 else
                 {
