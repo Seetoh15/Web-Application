@@ -27,7 +27,17 @@ namespace WAPP_Assignment.Educator
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                profile_pic.ImageUrl = dt.Rows[0][0].ToString();
+                string profilePicUrl = dt.Rows[0][0].ToString();
+
+                // Check if the profile picture URL is null or empty
+                if (string.IsNullOrEmpty(profilePicUrl))
+                {
+                    profilePicUrl = "../image/pp.png"; // Path to your default image
+                }
+
+                profile_pic.ImageUrl = profilePicUrl;
+
+                con.Close();
             }
         }
 

@@ -135,12 +135,23 @@
     <Content Include="Content\Site.css" />
     <Content Include="dbConnection.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Educator\addLearningMaterial.aspx" />
+    <Content Include="Educator\addLearningMaterial.css" />
+    <Content Include="Educator\addQuiz.aspx" />
     <Content Include="Educator\comment.aspx" />
     <Content Include="Educator\comment.css" />
     <Content Include="Educator\course.aspx" />
+    <Content Include="Educator\course.css" />
+    <Content Include="Educator\course.js" />
+    <Content Include="Educator\courseContent.aspx" />
+    <Content Include="Educator\courseContent.css" />
+    <Content Include="Educator\editChapter.aspx" />
     <Content Include="Educator\editProfile.aspx" />
     <Content Include="Educator\editProfile.css" />
+    <Content Include="Educator\editQuestion.aspx" />
+    <Content Include="Educator\editQuestion.css" />
     <Content Include="Educator\editQuiz.aspx" />
+    <Content Include="Educator\editQuiz.js" />
     <Content Include="Educator\forum.aspx" />
     <Content Include="Educator\forum.css" />
     <Content Include="Educator\forum.js" />
@@ -341,6 +352,20 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Educator\addLearningMaterial.aspx.cs">
+      <DependentUpon>addLearningMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Educator\addLearningMaterial.aspx.designer.cs">
+      <DependentUpon>addLearningMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Educator\addQuiz.aspx.cs">
+      <DependentUpon>addQuiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Educator\addQuiz.aspx.designer.cs">
+      <DependentUpon>addQuiz.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Educator\comment.aspx.cs">
       <DependentUpon>comment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -355,13 +380,34 @@
     <Compile Include="Educator\course.aspx.designer.cs">
       <DependentUpon>course.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Educator\courseContent.aspx.cs">
+      <DependentUpon>courseContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Educator\courseContent.aspx.designer.cs">
+      <DependentUpon>courseContent.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Educator\dataAccess.cs" />
+    <Compile Include="Educator\editChapter.aspx.cs">
+      <DependentUpon>editChapter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Educator\editChapter.aspx.designer.cs">
+      <DependentUpon>editChapter.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Educator\editProfile.aspx.cs">
       <DependentUpon>editProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Educator\editProfile.aspx.designer.cs">
       <DependentUpon>editProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Educator\editQuestion.aspx.cs">
+      <DependentUpon>editQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Educator\editQuestion.aspx.designer.cs">
+      <DependentUpon>editQuestion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Educator\editQuiz.aspx.cs">
       <DependentUpon>editQuiz.aspx</DependentUpon>
