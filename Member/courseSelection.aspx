@@ -8,6 +8,6 @@
     <div class="selection-container">
         <h1>Select a Course</h1>
         <a id="course1Button" href="English.aspx" class="course-button">English</a>
-        <a id="course2Button" href="maths.aspx" class="course-button">Mathematics</a>
+        <a id="course2Button" href="math.aspx" class="course-button">Mathematics</a>
     </div>
 </asp:Content>
